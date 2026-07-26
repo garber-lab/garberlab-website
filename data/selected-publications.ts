@@ -47,13 +47,21 @@ export const publicationSections: PublicationSectionSource[] = [
     ],
   },
   {
-    title: "Gene regulation",
+    title: "Gene regulation in immune cells",
     description:
-      "Foundational work from the lab on regulatory sequence, noncoding RNA, evolutionary constraint, and how genomes encode cellular programs.",
+      "Foundational lab work on how immune cell gene programs are built and dynamically controlled — the toolkit and comparative framework underneath our current disease work.",
     publications: [
       {
+        doi: "10.1016/j.molcel.2012.07.030",
+        note: "A high-throughput ChIP-seq approach revealing principles of dynamic gene regulation as dendritic cells respond to pathogen stimulation",
+      },
+      {
+        doi: "10.1016/j.cels.2018.01.002",
+        note: "Comparing regulatory elements across immune cell types reveals a conserved regulatory lexicon",
+      },
+      {
         doi: "10.1016/j.molcel.2020.09.005",
-        note: "Multiway proximal interactions mapped by SPRITE coupled with immunoprecipitation (SIP) revealed transcriptional hubs in early response of dendritic cells to LPS",
+        note: "Multiway proximal interactions mapped by SPRITE coupled with immunoprecipitation (SIP) revealed transcriptional hubs in the early response of dendritic cells to LPS",
       },
     ],
   },

@@ -1,4 +1,13 @@
 {
+  "10.1016/j.cels.2018.01.002": {
+    "pmid": "29454939",
+    "title": "Comparative Analysis of Immune Cells Reveals a Conserved Regulatory Lexicon.",
+    "authors": "Donnard E, Vangala P, Afik S, McCauley S, Nowosielska A, Kucukural A, Tabak B, Zhu X, Diehl W, McDonel P, Yosef N, Luban J, Garber M.",
+    "journal": "Cell Syst",
+    "year": "2018",
+    "doi": "10.1016/j.cels.2018.01.002",
+    "url": "https://doi.org/10.1016/j.cels.2018.01.002"
+  },
   "10.1016/j.jid.2024.09.008": {
     "pmid": "39341550",
     "title": "Single-Cell RNA Sequencing Reveals Molecular Signatures that Distinguish Allergic from Irritant Contact Dermatitis.",
@@ -7,6 +16,15 @@
     "year": "2025",
     "doi": "10.1016/j.jid.2024.09.008",
     "url": "https://doi.org/10.1016/j.jid.2024.09.008"
+  },
+  "10.1016/j.molcel.2012.07.030": {
+    "pmid": "22940246",
+    "title": "A high-throughput chromatin immunoprecipitation approach reveals principles of dynamic gene regulation in mammals.",
+    "authors": "Garber M, Yosef N, Goren A, Raychowdhury R, Thielke A, Guttman M, Robinson J, Minie B, Chevrier N, Itzhaki Z, Blecher-Gonen R, Bornstein C, Amann-Zalcenstein D, Weiner A, Friedrich D, Meldrim J, Ram O, Cheng C, Gnirke A, Fisher S, Friedman N, Wong B, Bernstein BE, Nusbaum C, Hacohen N, Regev A, Amit I.",
+    "journal": "Mol Cell",
+    "year": "2012",
+    "doi": "10.1016/j.molcel.2012.07.030",
+    "url": "https://doi.org/10.1016/j.molcel.2012.07.030"
   },
   "10.1016/j.molcel.2020.09.005": {
     "pmid": "32991830",

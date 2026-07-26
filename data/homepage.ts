@@ -2,6 +2,8 @@ export type ResearchProgram = {
   eyebrow: string;
   title: string;
   text: string;
+  link?: string;
+  linkLabel?: string;
 };
 
 export type FigureHighlight = {
@@ -15,11 +17,34 @@ export type MethodItem = {
   text: string;
 };
 
+export type FundingItem = {
+  name: string;
+  description: string;
+  link?: string;
+};
+
 export const researchPrograms: ResearchProgram[] = [
   {
-    eyebrow: "Human skin disease",
-    title: "Regulatory programs in skin autoimmunity",
-    text: "We study inflammatory skin diseases as human systems where genetic risk, environmental exposure, tissue injury, and immune memory can be measured together. Current projects span vitiligo, cutaneous lupus, dermatomyositis, psoriasis, and hidradenitis suppurativa.",
+    eyebrow: "Comparative disease biology",
+    title: "Why compare across autoimmune skin diseases?",
+    text: "Vitiligo, cutaneous lupus, dermatomyositis, psoriasis, and hidradenitis suppurativa can look clinically similar yet respond very differently to the same exposures and treatments — IL-17 inhibitors help psoriasis, JAK inhibitors help vitiligo, rarely both. We treat that divergence as the opportunity: comparing across diseases is more likely to yield durable insight into basic immunology and therapeutics than studying any one alone.",
+  },
+  {
+    eyebrow: "Cytokine response atlas",
+    title: "What is a lesion actually responding to?",
+    text: "We stimulate primary and ex vivo skin cells — keratinocytes, fibroblasts, immune and other stromal populations — with individual cytokines to build a cell-type-specific response atlas, then use it to decompose disease signatures instead of reading them as generic inflammation.",
+  },
+  {
+    eyebrow: "Genetics of cytokine response",
+    title: "Do risk variants act by changing how cells respond?",
+    text: "Skin autoimmune diseases are polygenic. With the IGVF consortium we combine genotyping, RNA-seq, ATAC-seq, and H3K27ac ChIP-seq to map response QTLs — variants that shift a cell's cytokine response rather than its baseline expression — and have linked variants near ERAP2 and HLA-DRB5 in melanocytes to interferon-γ antigen presentation.",
+  },
+  {
+    eyebrow: "Prospective cohorts",
+    title: "Catching autoimmunity as it begins",
+    text: "The VIGOR and CLuES studies follow people with vitiligo and cutaneous lupus, and their unaffected family members, over several years with fully remote at-home sampling — tracking genetic, environmental, and skin biomarker change before and during disease onset or progression.",
+    link: "https://vigor.umassmed.edu",
+    linkLabel: "vigor.umassmed.edu",
   },
   {
     eyebrow: "Myeloid biology",
@@ -32,14 +57,9 @@ export const researchPrograms: ResearchProgram[] = [
     text: "Using spatial transcriptomics and single-cell profiling, we map where immune states sit in skin, which neighboring cells shape them, and how keratinocytes, fibroblasts, lymphocytes, and myeloid cells form inflammatory neighborhoods.",
   },
   {
-    eyebrow: "Perturbation",
-    title: "From patient samples to causal models",
-    text: "We combine clinical perturbations, UV exposure, cytokine stimulation, ex vivo skin experiments, and in vitro reconstruction to ask what inflammatory cells are responding to and which signals are causal.",
-  },
-  {
-    eyebrow: "Genomes to mechanisms",
-    title: "Comparative and functional genomics",
-    text: "The lab's long-standing focus on gene regulation, noncoding sequence, evolutionary constraint, and regulatory modeling remains the engine underneath our disease work: how do genomes encode cellular responses, and how are those responses rewired in disease?",
+    eyebrow: "Gene regulation in immune cells",
+    title: "The regulatory logic of immune cell activation",
+    text: "Long before the disease-focused work above, we asked how immune cells dynamically rewire their gene programs — developing high-throughput ChIP-seq methods to capture regulation as dendritic cells respond to pathogens, mapping a conserved regulatory lexicon shared across immune cell types, and tracing the 3D genome hubs that form during that response. That toolkit remains the foundation underneath everything above.",
   },
 ];
 
@@ -73,6 +93,35 @@ export const methodItems: MethodItem[] = [
   {
     title: "Functional genomics",
     text: "Regulatory variants, response QTLs, perturb-seq, and sequence-to-function models.",
+  },
+];
+
+export const fundingAcknowledgments: FundingItem[] = [
+  {
+    name: "NIH Common Fund — IGVF Consortium",
+    description:
+      "Impact of Genomic Variation on Function. With the Weng lab: predictive modeling of the functional and phenotypic impact of genetic variants, including response QTLs in skin.",
+    link: "https://igvf.org",
+  },
+  {
+    name: "NIH Common Fund — SMaHT Network",
+    description:
+      "Somatic Mosaicism across Human Tissues. With the Fazzio lab: carCUT&Tag, a method for identifying and characterizing sequence variants in regulatory elements and genes.",
+    link: "https://smaht.org",
+  },
+  {
+    name: "NIH U01 — VIGOR / CLuES",
+    description:
+      "With Harris and Rashighi: predictive drivers of new-onset, relapse, and progression of human autoimmunity in skin.",
+    link: "https://vigor.umassmed.edu",
+  },
+  {
+    name: "NIH P50 (Project II)",
+    description: "With Richmond: cell-cell communication and tissue memory in vitiligo.",
+  },
+  {
+    name: "NIH R01",
+    description: "With DeVito: interrogating the clonal repertoire in drug hypersensitivity reactions.",
   },
 ];
 

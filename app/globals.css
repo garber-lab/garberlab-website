@@ -135,6 +135,24 @@ main {
   font-size: 0.78rem;
 }
 
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.umass-logo-link {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 20px;
+  border-left: 1px solid var(--line);
+}
+
+.umass-logo {
+  height: 26px;
+  width: auto;
+}
+
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -467,13 +485,15 @@ h3 {
 
 .program-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 14px;
   padding: 30px 0 56px;
 }
 
 .program-card {
-  min-height: 315px;
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
   padding: 24px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -494,6 +514,62 @@ h3 {
 .story-points span {
   color: var(--muted);
   line-height: 1.55;
+}
+
+.program-card-link {
+  margin-top: 16px;
+  color: var(--teal-dark);
+  font-weight: 720;
+  border-bottom: 1px solid var(--line);
+  width: fit-content;
+}
+
+.program-card-link:hover,
+.program-card-link:focus-visible {
+  color: var(--rose);
+  border-bottom-color: var(--rose);
+}
+
+.funding {
+  padding: 24px 0 88px;
+  border-top: 1px solid var(--line);
+}
+
+.funding-list {
+  display: grid;
+  gap: 4px;
+}
+
+.funding-item {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.36fr) minmax(0, 1fr);
+  gap: 24px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+
+.funding-item:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.funding-item strong {
+  font-size: 1rem;
+}
+
+.funding-item strong a {
+  border-bottom: 1px solid var(--line);
+}
+
+.funding-item strong a:hover,
+.funding-item strong a:focus-visible {
+  color: var(--teal-dark);
+  border-bottom-color: var(--teal-dark);
+}
+
+.funding-item span {
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .figure-highlights {
@@ -957,7 +1033,8 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .publication-item {
+  .publication-item,
+  .funding-item {
     grid-template-columns: 1fr;
   }
 

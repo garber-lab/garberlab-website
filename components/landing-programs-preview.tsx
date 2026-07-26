@@ -21,6 +21,11 @@ export function LandingProgramsPreview() {
             <p>{program.eyebrow}</p>
             <h3>{program.title}</h3>
             <span>{program.text}</span>
+            {program.link ? (
+              <a className="program-card-link" href={program.link}>
+                {program.linkLabel ?? program.link}
+              </a>
+            ) : null}
           </article>
         ))}
       </div>
