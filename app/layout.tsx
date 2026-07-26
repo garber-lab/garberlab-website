@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { SiteHeader } from "../components/site-header";
+import { SiteFooter } from "../components/site-footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,7 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Garber Lab | Computational Genomics and Skin Immunobiology",
+  title: {
+    default: "Garber Lab | Computational Genomics and Skin Immunobiology",
+    template: "%s | Garber Lab",
+  },
   description:
     "The Garber Lab studies how regulatory programs, immune cell states, and tissue context shape inflammatory skin disease.",
   icons: {
@@ -32,7 +37,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <SiteHeader />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

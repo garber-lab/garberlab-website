@@ -9,7 +9,7 @@ export function PublicationsSection({ selectedPublications }: PublicationsSectio
     <section className="section-shell publications" id="publications">
       <div className="section-heading">
         <p className="kicker">Selected publications</p>
-        <h2>Selected publications by theme</h2>
+        <h1>Selected publications by theme</h1>
         <p>
           These sections are built from DOI or PMID entries in a small editable data file. The short
           descriptions are meant to explain how each set fits into the lab story.

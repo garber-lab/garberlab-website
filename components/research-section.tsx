@@ -14,7 +14,7 @@ export function ResearchSection() {
       <section className="section-shell split-feature" id="research">
         <div>
           <p className="kicker">Research focus</p>
-          <h2>Skin as a living model of regulatory immunology</h2>
+          <h1>Skin as a living model of regulatory immunology</h1>
         </div>
         <p>
           Inflammatory skin disease gives us access to the molecular, spatial, and clinical layers of

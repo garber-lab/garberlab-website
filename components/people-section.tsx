@@ -35,7 +35,7 @@ export function PeopleSection() {
     <section className="section-shell people" id="people">
       <div>
         <p className="kicker">People</p>
-        <h2>A cross-disciplinary lab</h2>
+        <h1>A cross-disciplinary lab</h1>
         <p>
           We will add group member names, photos, short bios, alumni, and collaborator highlights
           here. The structure is ready for current members and past trainees across computational,

@@ -68,3 +68,15 @@ export function getSelectedPublications(): SelectedPublicationSection[] {
     publications: section.publications.map(resolvePublication),
   }));
 }
+
+export function getPublicationById(id: string): SelectedPublication | undefined {
+  for (const section of publicationSections) {
+    const source = section.publications.find((publication) => (publication.doi ?? publication.pmid) === id);
+    if (source) return resolvePublication(source);
+  }
+  return undefined;
+}
+
+export function getPublicationCount(): number {
+  return publicationSections.reduce((total, section) => total + section.publications.length, 0);
+}

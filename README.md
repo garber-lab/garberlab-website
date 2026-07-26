@@ -1,7 +1,6 @@
 # Garber Lab website
 
-Source for the Garber Lab website — Program in Bioinformatics and Integrative
-Biology, UMass Chan Medical School.
+Source for the Garber Lab website — Department of Bioinformatics and Computational Biology, UMass Chan Medical School.
 
 ## Stack
 
