@@ -5,7 +5,7 @@ export function ResearchSection() {
     <>
       <section className="section-shell statement">
         <p>
-          The lab's earlier work in comparative genomics, noncoding regulation, and regulatory
+          The lab&apos;s earlier work in comparative genomics, noncoding regulation, and regulatory
           modeling is not separate from our current disease focus. It is the framework we use to ask
           a newer question: how do regulatory programs become cellular behaviors in human tissue?
         </p>
