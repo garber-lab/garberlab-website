@@ -295,7 +295,7 @@ h1 {
 
 h2 {
   margin-bottom: 18px;
-  font-size: clamp(2rem, 4vw, 4.25rem);
+  font-size: clamp(1.5rem, 2.8vw, 3rem);
   font-weight: 740;
   line-height: 1;
   letter-spacing: 0;
@@ -448,6 +448,58 @@ h3 {
   border-color: #fff;
   background: #fff;
   color: var(--teal-dark);
+}
+
+.research-hero {
+  padding: clamp(56px, 8vw, 96px) 0;
+  background: #05100e;
+  color: #fff;
+}
+
+.research-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1.05fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+}
+
+.research-hero-copy .kicker {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.research-hero-copy h1 {
+  max-width: 560px;
+  color: #fff;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+}
+
+.research-hero-copy .lede {
+  max-width: 520px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+}
+
+.research-hero-figure {
+  margin: 0;
+  padding: 18px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.research-hero-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.research-hero-figure figcaption {
+  margin-top: 12px;
+  padding: 0 4px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
 }
 
 .statement {
@@ -959,7 +1011,8 @@ h3 {
   .figure-band,
   .current-story,
   .people,
-  .join {
+  .join,
+  .research-hero-inner {
     grid-template-columns: 1fr;
   }
 
