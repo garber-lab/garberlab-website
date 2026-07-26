@@ -4,6 +4,8 @@ export type ResearchProgram = {
   text: string;
   link?: string;
   linkLabel?: string;
+  image?: string;
+  imageAlt?: string;
 };
 
 export type FigureHighlight = {
@@ -28,11 +30,15 @@ export const researchPrograms: ResearchProgram[] = [
     eyebrow: "Comparative disease biology",
     title: "Why compare across autoimmune skin diseases?",
     text: "Vitiligo, cutaneous lupus, dermatomyositis, psoriasis, and hidradenitis suppurativa can look clinically similar yet respond very differently to the same exposures and treatments — IL-17 inhibitors help psoriasis, JAK inhibitors help vitiligo, rarely both. We treat that divergence as the opportunity: comparing across diseases is more likely to yield durable insight into basic immunology and therapeutics than studying any one alone.",
+    image: "/assets/spatial-cd14-tissue-panels.png",
+    imageAlt: "Spatial tissue panels comparing psoriasis, dermatomyositis, and cutaneous lupus samples",
   },
   {
     eyebrow: "Cytokine response atlas",
     title: "What is a lesion actually responding to?",
     text: "We stimulate primary and ex vivo skin cells — keratinocytes, fibroblasts, immune and other stromal populations — with individual cytokines to build a cell-type-specific response atlas, then use it to decompose disease signatures instead of reading them as generic inflammation.",
+    image: "/assets/ifnar-perturbation.png",
+    imageAlt: "UV and anifrolumab treatment response data, including before/after patient photos and CD11c+ myeloid quantification",
   },
   {
     eyebrow: "Genetics of cytokine response",
@@ -50,6 +56,8 @@ export const researchPrograms: ResearchProgram[] = [
     eyebrow: "Myeloid biology",
     title: "Macrophage and dendritic cell state transitions",
     text: "A central theme is how CD14+ myeloid cells, macrophages, and dendritic cells move through continuous transcriptional states. We are especially interested in resident-like, inflammatory, and disease-specific branches that emerge in tissue.",
+    image: "/assets/cd14-transition-program.png",
+    imageAlt: "M2 macrophage marker heatmaps and diffusion maps tracing the CD14+ myeloid transition program",
   },
   {
     eyebrow: "Spatial genomics",
@@ -60,6 +68,8 @@ export const researchPrograms: ResearchProgram[] = [
     eyebrow: "Gene regulation in immune cells",
     title: "The regulatory logic of immune cell activation",
     text: "Long before the disease-focused work above, we asked how immune cells dynamically rewire their gene programs — developing high-throughput ChIP-seq methods to capture regulation as dendritic cells respond to pathogens, mapping a conserved regulatory lexicon shared across immune cell types, and tracing the 3D genome hubs that form during that response. That toolkit remains the foundation underneath everything above.",
+    image: "/assets/sprite-dc-schematic.webp",
+    imageAlt: "Schematic of bone-marrow-derived dendritic cells stimulated over 4 and 24 hours, profiled by RNA-seq, H3K27ac ChIP-seq, ATAC-seq, and SPRITE, from Vangala et al. 2020",
   },
 ];
 
