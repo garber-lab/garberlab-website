@@ -41,3 +41,10 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+
+# local agent tooling (not part of the site)
+/.claude/
+
+# source files that shouldn't end up served from public/
+public/**/*.pptx
+public/**/~$*
