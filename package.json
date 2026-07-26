@@ -9,7 +9,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "resolve-publications": "node --experimental-strip-types scripts/resolve-publications.ts"
   },
   "dependencies": {
     "next": "16.2.6",

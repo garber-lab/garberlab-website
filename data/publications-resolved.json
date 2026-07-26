@@ -1,0 +1,83 @@
+{
+  "10.1016/j.jid.2024.09.008": {
+    "pmid": "39341550",
+    "title": "Single-Cell RNA Sequencing Reveals Molecular Signatures that Distinguish Allergic from Irritant Contact Dermatitis.",
+    "authors": "Frisoli ML, Ko WC, Martinez N, Afshari K, Wang Y, Garber M, Harris JE.",
+    "journal": "J Invest Dermatol",
+    "year": "2025",
+    "doi": "10.1016/j.jid.2024.09.008",
+    "url": "https://doi.org/10.1016/j.jid.2024.09.008"
+  },
+  "10.1016/j.molcel.2020.09.005": {
+    "pmid": "32991830",
+    "title": "High-Resolution Mapping of Multiway Enhancer-Promoter Interactions Regulating Pathogen Detection.",
+    "authors": "Vangala P, Murphy R, Quinodoz SA, Gellatly K, McDonel P, Guttman M, Garber M.",
+    "journal": "Mol Cell",
+    "year": "2020",
+    "doi": "10.1016/j.molcel.2020.09.005",
+    "url": "https://doi.org/10.1016/j.molcel.2020.09.005"
+  },
+  "10.1038/nbt.1633": {
+    "pmid": "20436462",
+    "title": "Ab initio reconstruction of cell type-specific transcriptomes in mouse reveals the conserved multi-exonic structure of lincRNAs.",
+    "authors": "Guttman M, Garber M, Levin JZ, Donaghey J, Robinson J, Adiconis X, Fan L, Koziol MJ, Gnirke A, Nusbaum C, Rinn JL, Lander ES, Regev A.",
+    "journal": "Nat Biotechnol",
+    "year": "2010",
+    "doi": "10.1038/nbt.1633",
+    "url": "https://doi.org/10.1038/nbt.1633"
+  },
+  "10.1038/s41467-025-60154-0": {
+    "pmid": "40404656",
+    "title": "Worm Perturb-Seq: massively parallel whole-animal RNAi and RNA-seq.",
+    "authors": "Zhang H, Li X, Song D, Yukselen O, Nanda S, Kucukural A, Li JJ, Garber M, Walhout AJM.",
+    "journal": "Nat Commun",
+    "year": "2025",
+    "doi": "10.1038/s41467-025-60154-0",
+    "url": "https://doi.org/10.1038/s41467-025-60154-0"
+  },
+  "10.1038/s41590-026-02502-w": {
+    "pmid": "42032302",
+    "title": "A spatially coordinated keratinocyte-fibroblast circuit recruits MMP9+ myeloid cells to drive type I interferon-driven inflammation in photosensitive autoimmunity.",
+    "authors": "Wang Y, Afshari K, Haddadi NS, Lopes CS, Eng CL, Whiteman LM, Martinez N, Kyawe PP, Anufrieva KS, Wei K, Frieda K, Rosenbach M, Vleugels RA, Gallucci S, Harris JE, Rashighi M, Garber M.",
+    "journal": "Nat Immunol",
+    "year": "2026",
+    "doi": "10.1038/s41590-026-02502-w",
+    "url": "https://doi.org/10.1038/s41590-026-02502-w"
+  },
+  "10.1093/bioinformatics/btp190": {
+    "pmid": "19478016",
+    "title": "Identifying novel constrained elements by exploiting biased substitution patterns.",
+    "authors": "Garber M, Guttman M, Clamp M, Zody MC, Friedman N, Xie X.",
+    "journal": "Bioinformatics",
+    "year": "2009",
+    "doi": "10.1093/bioinformatics/btp190",
+    "url": "https://doi.org/10.1093/bioinformatics/btp190"
+  },
+  "10.1126/scitranslmed.abd8995": {
+    "pmid": "34516831",
+    "title": "scRNA-seq of human vitiligo reveals complex networks of subclinical immune activation and a role for CCR5 in Treg function.",
+    "authors": "Gellatly KJ, Strassner JP, Essien K, Refat MA, Murphy RL, Coffin-Schmitt A, Pandya AG, Tovar-Garza A, Frisoli ML, Fan X, Ding X, Kim EE, Abbas Z, McDonel P, Garber M, Harris JE.",
+    "journal": "Sci Transl Med",
+    "year": "2021",
+    "doi": "10.1126/scitranslmed.abd8995",
+    "url": "https://doi.org/10.1126/scitranslmed.abd8995"
+  },
+  "10.1186/s12864-020-6714-x": {
+    "pmid": "32306927",
+    "title": "DolphinNext: a distributed data processing platform for high throughput genomics.",
+    "authors": "Yukselen O, Turkyilmaz O, Ozturk AR, Garber M, Kucukural A.",
+    "journal": "BMC Genomics",
+    "year": "2020",
+    "doi": "10.1186/s12864-020-6714-x",
+    "url": "https://doi.org/10.1186/s12864-020-6714-x"
+  },
+  "10.1371/journal.pgen.1010221": {
+    "pmid": "35675353",
+    "title": "Single cell transcriptomics reveals dysregulated cellular and molecular networks in a fragile X syndrome model.",
+    "authors": "Donnard E, Shu H, Garber M.",
+    "journal": "PLoS Genet",
+    "year": "2022",
+    "doi": "10.1371/journal.pgen.1010221",
+    "url": "https://doi.org/10.1371/journal.pgen.1010221"
+  }
+}

@@ -10,8 +10,8 @@ import { SiteFooter } from "../components/site-footer";
 import { SiteHeader } from "../components/site-header";
 import { getSelectedPublications } from "../lib/publications";
 
-export default async function Home() {
-  const selectedPublications = await getSelectedPublications();
+export default function Home() {
+  const selectedPublications = getSelectedPublications();
 
   return (
     <main>
