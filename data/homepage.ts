@@ -123,11 +123,15 @@ export const fundingAcknowledgments: FundingItem[] = [
     name: "NIH R01",
     description: "With DeVito: interrogating the clonal repertoire in drug hypersensitivity reactions.",
   },
+    {
+    name: "LEO Foundation Grant",
+    description: "To investigate the role of WARS1 as an alarmin that triggers CD14+ activation to initiate UV responses",
+  },
 ];
 
 export const storyPoints = [
   "CD14+ myeloid cells expand in photosensitive disease.",
   "Resident-like and inflammatory states form a continuum.",
   "Fibroblast and keratinocyte signals shape tissue recruitment.",
-  "HS may reveal a distinct CCR2+ branch of the program.",
+  "CD14+ cells also expand in other disedases and show disease specific state and spatial transitions",
 ];
