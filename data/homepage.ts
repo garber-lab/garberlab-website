@@ -63,6 +63,8 @@ export const researchPrograms: ResearchProgram[] = [
     eyebrow: "Spatial genomics",
     title: "Tissue circuits that organize inflammation",
     text: "Using spatial transcriptomics and single-cell profiling, we map where immune states sit in skin, which neighboring cells shape them, and how keratinocytes, fibroblasts, lymphocytes, and myeloid cells form inflammatory neighborhoods.",
+    image: "/assets/lesion_chemokine_recruitment.png",
+    imageAlt: "Chemokine receptor expression across the CD14+ transition linked to spatial chemokine ligand trajectories across fibroblast, endothelial, and myeloid cell types",
   },
   {
     eyebrow: "Gene regulation in immune cells",
