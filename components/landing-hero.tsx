@@ -1,13 +1,15 @@
 import Link from "next/link";
-import { researchPrograms } from "../data/homepage";
-import { getPublicationCount } from "../lib/publications";
 
 export function LandingHero() {
-  const publicationCount = getPublicationCount();
-
   return (
-    <section className="section-shell landing-hero">
-      <div className="landing-hero-copy">
+    <section className="hero-media">
+      <img
+        className="hero-media-image"
+        src="/assets/hero-tissue.webp"
+        alt="Spatial transcriptomics of human skin showing MMP9+ myeloid cells and LYVE1+ populations at the epidermal-dermal boundary"
+      />
+      <div className="hero-media-overlay" aria-hidden="true" />
+      <div className="hero-media-content section-shell">
         <p className="kicker">Systems immunology of human autoimmunity</p>
         <h1>From reductionist mechanisms to models of autoimmunity in humans</h1>
         <p className="lede">
@@ -24,20 +26,10 @@ export function LandingHero() {
           </Link>
         </div>
       </div>
-      <div className="landing-hero-stats" aria-label="Lab at a glance">
-        <div className="stat">
-          <strong>2009</strong>
-          <span>Lab founded</span>
-        </div>
-        <div className="stat">
-          <strong>{researchPrograms.length}</strong>
-          <span>Active research programs</span>
-        </div>
-        <div className="stat">
-          <strong>{publicationCount}</strong>
-          <span>Selected publications</span>
-        </div>
-      </div>
+      <p className="hero-media-credit">
+        Spatial transcriptomics of human skin — MMP9+ myeloid cells and LYVE1+ populations at the
+        epidermal-dermal boundary
+      </p>
     </section>
   );
 }
