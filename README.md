@@ -1,6 +1,6 @@
 # Garber Lab website
 
-Source for the Garber Lab website — Department of Bioinformatics and Computational Biology, UMass Chan Medical School.
+Source for the Garber Lab website — Department of Genomics and Computational Biology, UMass Chan Medical School.
 
 ## Stack
 

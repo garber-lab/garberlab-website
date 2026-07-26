@@ -9,7 +9,7 @@ export function LandingProgramsPreview() {
       <div className="landing-section-heading">
         <div>
           <p className="kicker">What we work on</p>
-          <h2>Skin as a living model of regulatory immunology</h2>
+          <h2>Skin as a human model of autoimmunity and autoinflammatory conditions</h2>
         </div>
         <Link className="landing-link" href="/research">
           Explore all research →
