@@ -287,9 +287,9 @@ p {
 h1 {
   max-width: 720px;
   margin-bottom: 24px;
-  font-size: clamp(2.45rem, 4.25vw, 4.55rem);
+  font-size: clamp(2rem, 3.2vw, 3.4rem);
   font-weight: 780;
-  line-height: 1.02;
+  line-height: 1.06;
   letter-spacing: 0;
 }
 
@@ -1010,7 +1010,7 @@ h3 {
   }
 
   h1 {
-    font-size: clamp(2.7rem, 17vw, 4.6rem);
+    font-size: clamp(1.9rem, 9vw, 2.6rem);
   }
 
   .hero-media {
