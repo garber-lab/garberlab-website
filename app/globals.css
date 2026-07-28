@@ -65,7 +65,7 @@ main {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   min-width: 210px;
 }
 
@@ -79,6 +79,7 @@ main {
   color: #fff;
   overflow: hidden;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+  transform: scale(1.2);
 }
 
 .brand-skin {
@@ -129,10 +130,14 @@ main {
   line-height: 1.15;
 }
 
+.brand strong {
+  font-size: 1.15rem;
+}
+
 .brand small {
   margin-top: 3px;
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: 0.85rem;
 }
 
 .brand-group {
@@ -157,9 +162,10 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 8px 20px;
+  gap: 8px 24px;
   color: var(--ink-soft);
-  font-size: 0.92rem;
+  font-size: 1.05rem;
+  font-weight: 700;
 }
 
 nav a {
@@ -217,6 +223,14 @@ nav a:focus-visible {
   flex-direction: column;
   align-items: center;
   padding: 140px 24px 64px;
+}
+
+.hero-media-wordmark {
+  margin: 0 0 14px;
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: #fff;
 }
 
 .hero-media-content .kicker {
@@ -507,10 +521,10 @@ h3 {
 }
 
 .statement p {
-  max-width: 1050px;
+  max-width: 900px;
   color: var(--foreground);
-  font-size: clamp(1.55rem, 3vw, 2.55rem);
-  line-height: 1.18;
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  line-height: 1.5;
 }
 
 .split-feature,
@@ -522,6 +536,11 @@ h3 {
   gap: clamp(30px, 5vw, 76px);
   padding: 92px 0 34px;
   border-top: 1px solid var(--line);
+}
+
+.split-feature-copy {
+  display: grid;
+  gap: 16px;
 }
 
 .split-feature p,
@@ -543,6 +562,8 @@ h3 {
 }
 
 .program-card {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   min-height: 260px;
@@ -550,22 +571,49 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--paper);
-  overflow: hidden;
+}
+
+.program-card:hover,
+.program-card:focus-within {
+  z-index: 20;
 }
 
 .program-card-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   margin: -24px -24px 18px;
-  height: 170px;
+  height: 150px;
+  border-radius: 8px 8px 0 0;
   background: #0d1614;
+  overflow: hidden;
+  transition: height 0.25s ease, border-radius 0.25s ease, box-shadow 0.25s ease;
+}
+
+.program-card:hover .program-card-image,
+.program-card:focus-within .program-card-image {
+  position: absolute;
+  z-index: 30;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(480px, 90vw);
+  height: auto;
+  max-height: 75vh;
+  margin: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 26px 60px rgba(13, 22, 20, 0.4);
 }
 
 .program-card-image img {
   display: block;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+
+.program-card:hover .program-card-image img,
+.program-card:focus-within .program-card-image img {
+  height: auto;
   object-fit: contain;
 }
 

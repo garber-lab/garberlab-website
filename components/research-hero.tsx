@@ -4,11 +4,12 @@ export function ResearchHero() {
       <div className="section-shell research-hero-inner">
         <div className="research-hero-copy">
           <p className="kicker">Research approach</p>
-          <h1>Disease as a cell-to-cell signaling network</h1>
+          <h1>From Regulatory Programs to Tissue Inflammation</h1>
           <p className="lede">
-            Genetics, cytokine responses, spatial context — every thread below maps onto the same
-            underlying question: which cells are talking to which, and how does that conversation
-            change in disease?
+            We study skin autoimmunity as a breakdown in how tissue components communicate. 
+            By combining clinical data, prospective human cohorts, ex vivo systems, 
+            and reductionist in vitro models, we ask how cytokine responses, chemokine gradients, 
+            stromal signals, immune states, and spatial context come together to produce disease. 
           </p>
         </div>
         <figure className="research-hero-figure">

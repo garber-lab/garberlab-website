@@ -10,6 +10,7 @@ export function LandingHero() {
       />
       <div className="hero-media-overlay" aria-hidden="true" />
       <div className="hero-media-content section-shell">
+        <p className="hero-media-wordmark">Welcome to the Garber Lab</p>
         <p className="kicker">Systems immunology of human autoimmunity</p>
         <h1>From reductionist mechanisms to models of autoimmunity in humans</h1>
         <p className="lede">

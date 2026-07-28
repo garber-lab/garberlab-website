@@ -18,6 +18,11 @@ export function LandingProgramsPreview() {
       <div className="landing-program-grid">
         {preview.map((program) => (
           <article className="program-card" key={program.title}>
+            {program.image ? (
+              <div className="program-card-image">
+                <img src={program.image} alt={program.imageAlt ?? ""} />
+              </div>
+            ) : null}
             <p>{program.eyebrow}</p>
             <h3>{program.title}</h3>
             <span>{program.text}</span>

@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import { ApproachSection } from "../../components/approach-section";
 import { CurrentStorySection } from "../../components/current-story-section";
-import { FigureHighlightsSection } from "../../components/figure-highlights-section";
 import { FundingSection } from "../../components/funding-section";
 import { ResearchHero } from "../../components/research-hero";
 import { ResearchSection } from "../../components/research-section";
@@ -17,8 +15,6 @@ export default function ResearchPage() {
     <main>
       <ResearchHero />
       <ResearchSection />
-      <FigureHighlightsSection />
-      <ApproachSection />
       <CurrentStorySection />
       <FundingSection />
     </main>

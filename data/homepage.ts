@@ -37,13 +37,15 @@ export const researchPrograms: ResearchProgram[] = [
     eyebrow: "Cytokine response atlas",
     title: "What is a lesion actually responding to?",
     text: "We stimulate primary and ex vivo skin cells — keratinocytes, fibroblasts, immune and other stromal populations — with individual cytokines to build a cell-type-specific response atlas, then use it to decompose disease signatures instead of reading them as generic inflammation.",
-    image: "/assets/ifnar-perturbation.png",
-    imageAlt: "UV and anifrolumab treatment response data, including before/after patient photos and CD11c+ myeloid quantification",
+    image: "/assets/cytokine_responses_heatmap.png",
+    imageAlt: "Heatmap of gene expression responses to PBS, IFN-gamma, IFN-beta, and TNF-alpha stimulation",
   },
   {
     eyebrow: "Genetics of cytokine response",
     title: "Do risk variants act by changing how cells respond?",
     text: "Skin autoimmune diseases are polygenic. With the IGVF consortium we combine genotyping, RNA-seq, ATAC-seq, and H3K27ac ChIP-seq to map response QTLs — variants that shift a cell's cytokine response rather than its baseline expression — and have linked variants near ERAP2 and HLA-DRB5 in melanocytes to interferon-γ antigen presentation.",
+    image: "/assets/reQTL_ERAP2.png",
+    imageAlt: "Response QTL plot showing genotype-dependent gene expression change from PBS to IFN-gamma stimulation",
   },
   {
     eyebrow: "Prospective cohorts",
@@ -51,6 +53,8 @@ export const researchPrograms: ResearchProgram[] = [
     text: "The VIGOR and CLuES studies follow people with vitiligo and cutaneous lupus, and their unaffected family members, over several years with fully remote at-home sampling — tracking genetic, environmental, and skin biomarker change before and during disease onset or progression.",
     link: "https://vigor.umassmed.edu",
     linkLabel: "vigor.umassmed.edu",
+    image: "/assets/vigor_website.png",
+    imageAlt: "VIGOR study website landing page, 'Help Us Stop Vitiligo Before It Begins'",
   },
   {
     eyebrow: "Myeloid biology",
