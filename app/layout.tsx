@@ -40,6 +40,12 @@ export default function RootLayout({
         <SiteHeader />
         {children}
         <SiteFooter />
+        <script
+          defer
+          type="module"
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "45a53422791f40fc8f0c772b17458475"}'
+        />
       </body>
     </html>
   );
