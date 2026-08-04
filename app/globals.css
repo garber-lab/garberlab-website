@@ -920,6 +920,18 @@ h3 {
   gap: 18px;
 }
 
+.people-directory-heading {
+  margin: 8px 0 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--teal);
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.people-directory-heading:first-child {
+  margin-top: 0;
+}
+
 .people-group {
   display: grid;
   gap: 16px;
@@ -933,28 +945,6 @@ h3 {
   margin: 0;
   font-size: 1.08rem;
   font-weight: 740;
-}
-
-.people-roster {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-
-.people-roster > div {
-  display: grid;
-  align-content: start;
-  gap: 10px;
-  min-width: 0;
-}
-
-.people-roster > div > h4 {
-  margin: 0;
-  color: var(--teal);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 .people-card-list {
@@ -1014,6 +1004,22 @@ h3 {
 .person-card .person-role {
   color: var(--teal-dark);
   font-weight: 800;
+}
+
+.person-card .person-now {
+  display: grid;
+  gap: 2px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #b8c0b6;
+}
+
+.person-card .person-now-line {
+  font-size: 0.9rem;
+}
+
+.person-card .person-now-line strong {
+  color: var(--teal-dark);
 }
 
 .people-empty {
@@ -1156,7 +1162,6 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .people-roster,
   .person-card {
     grid-template-columns: 1fr;
   }

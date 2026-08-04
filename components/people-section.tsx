@@ -10,7 +10,15 @@ function getInitials(name: string) {
     .toUpperCase();
 }
 
-function PersonCard({ person }: { person: LabPerson }) {
+function PersonCard({
+  person,
+  variant = "alumnus",
+}: {
+  person: LabPerson;
+  variant?: "current" | "alumnus";
+}) {
+  const now = [person.currentRole, person.institution].filter(Boolean).join(", ");
+  const nowLabel = variant === "current" ? "Affiliation:" : "Now:";
   return (
     <article className="person-card">
       {person.image ? (
@@ -24,7 +32,28 @@ function PersonCard({ person }: { person: LabPerson }) {
         <h4>{person.name}</h4>
         <p className="person-dates">{person.dates}</p>
         {person.role ? <p className="person-role">{person.role}</p> : null}
-        <p>{person.focus}</p>
+        {person.focus ? <p>{person.focus}</p> : null}
+        {now || person.workingOn || person.link ? (
+          <div className="person-now">
+            {now ? (
+              <p className="person-now-line">
+                <strong>{nowLabel}</strong> {now}
+              </p>
+            ) : null}
+            {person.workingOn ? (
+              <p className="person-now-line">
+                <strong>Working on:</strong> {person.workingOn}
+              </p>
+            ) : null}
+            {person.link ? (
+              <p className="person-now-line">
+                <a href={person.link} target="_blank" rel="noopener noreferrer">
+                  Profile ↗
+                </a>
+              </p>
+            ) : null}
+          </div>
+        ) : null}
       </div>
     </article>
   );
@@ -43,37 +72,39 @@ export function PeopleSection() {
         </p>
       </div>
       <div className="people-directory">
+        <h2 className="people-directory-heading">Current members</h2>
         {peopleGroups.map((group) => (
-          <section className="people-group" key={group.title}>
+          <section className="people-group" key={`current-${group.title}`}>
             <h3>{group.title}</h3>
-            <div className="people-roster">
-              <div>
-                <h4>Current</h4>
-                {group.current.length > 0 ? (
-                  <div className="people-card-list">
-                    {group.current.map((person) => (
-                      <PersonCard person={person} key={`${group.title}-${person.name}`} />
-                    ))}
-                  </div>
-                ) : (
-                  <div className="people-empty">Add current members in the people data file.</div>
-                )}
+            {group.current.length > 0 ? (
+              <div className="people-card-list">
+                {group.current.map((person) => (
+                  <PersonCard person={person} variant="current" key={`${group.title}-${person.name}`} />
+                ))}
               </div>
-              <div>
-                <h4>Alumni and past members</h4>
-                {group.alumni.length > 0 ? (
-                  <div className="people-card-list">
-                    {group.alumni.map((person) => (
-                      <PersonCard person={person} key={`${group.title}-${person.name}`} />
-                    ))}
-                  </div>
-                ) : (
-                  <div className="people-empty">Add alumni or past members in the people data file.</div>
-                )}
-              </div>
-            </div>
+            ) : (
+              <div className="people-empty">Add current members in the people data file.</div>
+            )}
           </section>
         ))}
+
+        <h2 className="people-directory-heading">Alumni and past members</h2>
+        {peopleGroups
+          .filter((group) => !group.hideAlumni)
+          .map((group) => (
+            <section className="people-group" key={`alumni-${group.title}`}>
+              <h3>{group.title}</h3>
+              {group.alumni.length > 0 ? (
+                <div className="people-card-list">
+                  {group.alumni.map((person) => (
+                    <PersonCard person={person} key={`${group.title}-${person.name}`} />
+                  ))}
+                </div>
+              ) : (
+                <div className="people-empty">Add alumni or past members in the people data file.</div>
+              )}
+            </section>
+          ))}
       </div>
     </section>
   );
