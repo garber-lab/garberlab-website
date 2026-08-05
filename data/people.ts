@@ -90,10 +90,15 @@ export const peopleGroups: PeopleGroup[] = [
     alumni: [
       {
         name: "Elisa Donnard",
-        dates: "",
+        dates: "2014-2020",
         role: "Postdoctoral Fellow",
-        focus: "",
-        institution: "Broad Institute",
+        focus:
+          "Single-cell and comparative genomics approaches to dissect transcriptional and post-transcriptional regulatory programs across diverse tissues. A particular focus was Fragile X syndrome, showing how loss of the FMRP protein leads to cell-type-specific transcriptional changes in mouse brain, and is linked to mRNA stability.",
+        currentRole: "Group Leader / Principal Investigator",
+        institution: "Broad Institute / Novo Nordisk Foundation Center for Genomic Mechanisms of Disease",
+        workingOn:
+          "Functional genomics and gene regulation in metabolic disease-relevant cell models, using cell villages and large-scale Perturb-seq screens",
+        image: "/people/Elisa-Donnard.jpg",
       },
       {
         name: "Xiaopeng Zhu",
