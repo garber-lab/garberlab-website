@@ -19,6 +19,23 @@ export type PeopleGroup = {
   hideAlumni?: boolean;
 };
 
+export type InMemoriam = {
+  name: string;
+  dates: string;
+  tribute: string[];
+  image?: string;
+};
+
+export const inMemoriam: InMemoriam = {
+  name: "Patrick McDonel",
+  dates: "1977–2023",
+  image: "/people/Patrick_mcdonel.jpg",
+  tribute: [
+    "Patrick passed away on November 19, 2023. The Garber lab owes much of the things we do to him. He established our molecular biology operation and instilled its philosophy.",
+    "It was not only in science that Patrick knew what was important. He kept everyone in touch — whether it was his Christmas gathering for non-Christians, an overnight smoking affair, or just cocktails, it was always at Patrick's house that we'd end up seeing people the rest of us hadn't made the time to seek out ourselves. He is sorely missed, and we keep his memory with us.",
+  ],
+};
+
 export const peopleGroups: PeopleGroup[] = [
   {
     title: "Principal investigator",
