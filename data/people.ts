@@ -79,7 +79,7 @@ export const peopleGroups: PeopleGroup[] = [
       },
       {
         name: "Yuming Cao",
-        dates: "Sept 2018- May 2024",
+        dates: "Sept 2018 - May 2024",
         role: "Graduate Student",
         focus: "Investigated host-virus dynamics at single cell resolution in primary human cells.",
         currentRole: "Computational Scientist",
@@ -88,10 +88,13 @@ export const peopleGroups: PeopleGroup[] = [
       },
       {
         name: "Yuqing Wang",
-        dates: "",
-        role: "Graduate Student",
-        focus: "",
-        institution: "New England Biolabs (NEB)",
+        dates: "March 2019 - Feb 2027",
+        role: "Graduate Student and Postdoctoral Fellow",
+        focus: "Investigating the molecular mechanisms of photosensitivity in autoimmune skin diseases, including dermatomyositis and cutaneous lupus erythematosus (CLE), through integrated multi-omics analyses encompassing single-cell RNA sequencing (scRNA-seq), proteomics, and spatial transcriptomics.",
+        currentRole: "Bioinformatics Scientist",
+        institution: "New England Biolabs, Inc.",
+        workingOn: "Enzyme characterization using NGS, pipeline development and automation.",
+        image: "/people/yuqing_wang.jpg",
       },
       {
         name: "Jake Gellatly",
