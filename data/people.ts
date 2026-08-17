@@ -145,8 +145,16 @@ export const peopleGroups: PeopleGroup[] = [
         dates: "2026-present",
         role: "Computational Biologist",
         focus:
-          "I apply computational and AI/ML approaches to analyze single-cell and spatial transcriptomic data. My current work includes developing gene-expression scoring methods and studying cellular responses and states in inflammatory skin diseases. (",
+          "I apply computational and AI/ML approaches to analyze single-cell and spatial transcriptomic data. My current work includes developing gene-expression scoring methods and studying cellular responses and states in inflammatory skin diseases.",
         image: "/people/Sandhiya_ravi.png",
+      },
+      {
+        name: "Thomas Jacob",
+        dates: "2023-present",
+        role: "Bioinformatician",
+        focus:
+          "I am the bioinformatician and data scientist for the VIGOR study, a longitudinal vitiligo family study aimed at identifying the genetic and environmental causes of the disease. I build and maintain computational workflows to harmonize study data, derive insights from complex genomic datasets, integrate wearable biometrics (e.g., Fitbit data), and manage the cohort across platforms. My current focus is developing pipelines to evaluate genomic risk scores in the VIGOR cohort to better understand how a person's genome influences vitiligo onset.",
+        image: "/people/thomas_jacob.jpg",
       },
     ],
     alumni: [
