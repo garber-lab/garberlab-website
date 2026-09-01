@@ -63,7 +63,7 @@ export const newsItems: NewsItem[] = [
     // TODO: split into two items if the Broad move was much later than the defense
     date: "2025-05-01",
     category: "people",
-    title: "Yuming Cao defended her theses and graduated",
+    title: "Yuming Cao defended her thesis and graduated",
   },
 ];
 
