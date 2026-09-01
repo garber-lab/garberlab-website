@@ -103,14 +103,13 @@ export const peopleGroups: PeopleGroup[] = [
         focus: "",
       },
       {
-        // NOTE: verify spelling — old site says "Affik", but "Afik" is common
-        name: "Shaked Affik",
+        name: "Shaked Afik",
         dates: "",
         role: "Visiting Masters Student",
         focus: "",
         // Photo available on the old site:
         // umassmed.edu/globalassets/garber-lab/images/alumni/shaked.affik.png
-        // image: "/people/shaked-affik.jpg",
+        // image: "/people/shaked-afik.jpg",
       },
     ],
   },
