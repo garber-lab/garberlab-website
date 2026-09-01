@@ -46,8 +46,7 @@ export const peopleGroups: PeopleGroup[] = [
         role: "Principal investigator",
         focus:
           "Systems immunology, regulatory genomics, and computational models of human inflammatory disease.",
-        // Add a photo to public/people/manuel-garber.jpg, then uncomment:
-        // image: "/people/manuel-garber.jpg",
+        image: "/people/Manuel_Garber.png",
       },
     ],
     alumni: [],
@@ -100,7 +99,18 @@ export const peopleGroups: PeopleGroup[] = [
         name: "Jake Gellatly",
         dates: "",
         role: "Graduate Student",
+        // NOTE: old lab site lists him as "Kyle (Jake) Gellatly"
         focus: "",
+      },
+      {
+        // NOTE: verify spelling — old site says "Affik", but "Afik" is common
+        name: "Shaked Affik",
+        dates: "",
+        role: "Visiting Masters Student",
+        focus: "",
+        // Photo available on the old site:
+        // umassmed.edu/globalassets/garber-lab/images/alumni/shaked.affik.png
+        // image: "/people/shaked-affik.jpg",
       },
     ],
   },
@@ -163,6 +173,15 @@ export const peopleGroups: PeopleGroup[] = [
         dates: "",
         role: "Computational Biologist",
         focus: "",
+      },
+      {
+        name: "Narayan Sadagopan",
+        dates: "",
+        role: "Bioinformatician",
+        focus: "",
+        // Photo available on the old site:
+        // umassmed.edu/globalassets/garber-lab/images/alumni/narayan.jpg
+        // image: "/people/narayan-sadagopan.jpg",
       },
       {
         name: "Rachel Murphy",
