@@ -14,7 +14,7 @@ export const publicationSections: PublicationSectionSource[] = [
   {
     title: "Skin autoimmunity and inflammation",
     description:
-      "Human skin disease is our main system for understanding autoimmunity thanks for sample availabiloty.",
+      "Human skin disease is our main system for understanding autoimmunity thanks for sample availability.",
     publications: [
       // Nat Immunol 2026 - CD14/photosensitive autoimmunity paper and cover feature.
       {

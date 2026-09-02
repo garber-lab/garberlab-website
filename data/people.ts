@@ -68,7 +68,7 @@ export const peopleGroups: PeopleGroup[] = [
       {
         name: "Pranitha Vangala",
         dates: "Sept 2014 - May 2020",
-        role: "Graduate Student",
+        role: "Graduate Student and Postdoctoral Fellow",
         focus:
           "Role of cis-regulatory elements in transcriptional regulation integrating evolutionary approaches, 4D interaction data and chromatin activity maps",
         currentRole: "Computational Biologist",
@@ -79,7 +79,7 @@ export const peopleGroups: PeopleGroup[] = [
       {
         name: "Yuming Cao",
         dates: "Sept 2018 - May 2024",
-        role: "Graduate Student",
+        role: "Graduate Student and Postdoctoral Fellow",
         focus: "Investigated host-virus dynamics at single cell resolution in primary human cells.",
         currentRole: "Computational Scientist",
         institution: "Broad Institute of MIT and Harvard",

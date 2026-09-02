@@ -139,7 +139,7 @@ export const fundingAcknowledgments: FundingItem[] = [
   },
   {
     name: "NIH R01",
-    description: "With DeVito: interrogating the clonal repertoire in drug hypersensitivity reactions.",
+    description: "With Divito: interrogating the clonal repertoire in drug hypersensitivity reactions.",
   },
     {
     name: "LEO Foundation",

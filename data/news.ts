@@ -63,7 +63,8 @@ export const newsItems: NewsItem[] = [
     // TODO: split into two items if the Broad move was much later than the defense
     date: "2025-05-01",
     category: "people",
-    title: "Yuming Cao defended her thesis and graduated",
+    title: "Yuming Cao graduated",
+    body: "Yuming defended her thesis on host-virus dynamics at single-cell resolution in primary human cells, and is now a Computational Scientist at the Broad Institute of MIT and Harvard.",
   },
 ];
 
