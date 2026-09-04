@@ -66,9 +66,9 @@ export const peopleGroups: PeopleGroup[] = [
       {
         name: "Wei-Che Ko",
         dates: "2022-present",
-        role: "Millennium program PhD Student",
+        role: "Millennium Program PhD Student",
         focus:
-          "I am a board-certified dermatologist with subspecialty expertise in allergic contact dermatitis. In the clinic, I perform patch testing to identify the specific allergens driving a patient's skin disease. In my research, I combine clinical samples with single-cell approaches and computational methods to define allergen-specific molecular signatures and dissect the immune mechanisms underlying contact allergy.",
+          "I am a board-certified dermatologist with subspecialty expertise in allergic contact dermatitis. In the clinic, I perform patch testing to identify the specific allergens driving a patient's skin disease. In my research, I combine clinical sampling with single-cell approaches and computational methods to define allergen-specific molecular signatures and dissect the immune mechanisms underlying contact allergy.",
         image: "/people/wei-che_ko.jpg",
       },
     ],
