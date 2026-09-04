@@ -92,6 +92,7 @@ export const peopleGroups: PeopleGroup[] = [
         currentRole: "Computational Scientist",
         institution: "Broad Institute of MIT and Harvard",
         workingOn: "Computational tool development for large-scale single cell Perturb-seq screens",
+        image: "/people/yuming_cao.jpg"
       },
       {
         name: "Yuqing Wang",
