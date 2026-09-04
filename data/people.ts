@@ -63,6 +63,14 @@ export const peopleGroups: PeopleGroup[] = [
           "I map expression and response QTLs (reQTLs) in human skin cells to understand how genetic variants shape cytokine responses. My work combines eQTL and reQTL mapping with chromatin accessibility data and sequence-based deep learning models to identify variants that alter regulatory DNA elements and transcription factor binding.",
         image: "/people/crystal_shuo_shan.jpg",
       },
+      {
+        name: "Wei-Che Ko",
+        dates: "2022-present",
+        role: "Millennium program PhD Student",
+        focus:
+          "I am a board-certified dermatologist with subspecialty expertise in allergic contact dermatitis. In the clinic, I perform patch testing to identify the specific allergens driving a patient's skin disease. In my research, I combine clinical samples with single-cell sequencing and computational approaches to define allergen-specific molecular signatures and dissect the immune mechanisms underlying contact allergy.",
+        image: "/people/wei-che_ko.jpg",
+      },
     ],
     alumni: [
       {
@@ -97,7 +105,7 @@ export const peopleGroups: PeopleGroup[] = [
       },
       {
         name: "Jake Gellatly",
-        dates: "",
+        dates: "March 2016 - May 2021",
         role: "Graduate Student",
         // NOTE: old lab site lists him as "Kyle (Jake) Gellatly"
         focus: "",
