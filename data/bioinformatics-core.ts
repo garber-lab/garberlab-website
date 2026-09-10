@@ -99,7 +99,7 @@ export const coreToday = {
   period: "Today",
   title: "Working with the core",
   intro:
-    "The core works with labs at UMass Chan across the whole arc of a sequencing project, and it still builds the systems it runs on.",
+    "The core works with labs at UMass Chan across the whole arc of a sequencing project, and it still builds the systems it runs on. The platform that began as Dolphin and became DolphinNext is now called Foundry Connect.",
   services: [
     "Consultation on study design, before the sequencing rather than after it.",
     "Standard analyses: bulk RNA-seq, single cell, ATAC, ChIP, and variant calling.",
@@ -108,5 +108,5 @@ export const coreToday = {
     "Training and workshops.",
   ],
   contactLead: "To start a project, email the core at",
-  email: "biocore@umassme.edu",
+  email: "biocore@umassmed.edu",
 };
