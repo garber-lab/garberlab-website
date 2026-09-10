@@ -12,7 +12,8 @@ export function GallerySection() {
         <div className="gallery-grid">
           {galleryPhotos.map((photo) => (
             <figure className="gallery-photo" key={photo.image}>
-              <img src={photo.image} alt={photo.caption} />
+              <span className="gallery-photo-backdrop" aria-hidden="true" />
+              <img src={photo.image} alt={photo.caption} tabIndex={0} />
               <figcaption>
                 {photo.caption}
                 {photo.date ? <span className="gallery-photo-date"> — {photo.date}</span> : null}

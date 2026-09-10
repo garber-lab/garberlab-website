@@ -944,9 +944,36 @@ h3 {
 }
 
 .gallery-photo {
+  position: relative;
+  z-index: 1;
   margin: 0;
   display: grid;
   gap: 10px;
+}
+
+.gallery-photo:hover,
+.gallery-photo:focus-within {
+  z-index: 1000;
+}
+
+.gallery-photo-backdrop {
+  display: none;
+}
+
+.gallery-photo:hover .gallery-photo-backdrop,
+.gallery-photo:focus-within .gallery-photo-backdrop {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(5, 16, 14, 0.65);
+  /* Purely visual dimming - must not intercept the mouse, or hovering
+     ANYWHERE on screen counts as hovering this backdrop (a descendant of
+     the hovered figure), which keeps :hover true until the cursor leaves
+     the browser window entirely. This lets the pointer "see through" it
+     to whatever's actually underneath, so moving off the enlarged photo
+     correctly ends the hover state. */
+  pointer-events: none;
 }
 
 .gallery-photo img {
@@ -957,6 +984,27 @@ h3 {
   border-radius: 8px;
   border: 1px solid var(--line);
   background: var(--paper-warm);
+  cursor: zoom-in;
+}
+
+/* On hover/focus, the photo pops out full-size, centered on the viewport
+   (not just relative to its own grid cell) so it reads clearly regardless
+   of where in a long gallery page it happens to sit. Width/height are both
+   capped and object-fit is "contain", so portrait and landscape photos
+   both scale to fit without cropping or distortion. */
+.gallery-photo:hover img,
+.gallery-photo:focus-within img {
+  position: fixed;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(85vw, 1100px);
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+  box-shadow: 0 30px 80px rgba(5, 16, 14, 0.5);
+  cursor: zoom-out;
 }
 
 .gallery-photo figcaption {
