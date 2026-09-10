@@ -328,6 +328,23 @@ h3 {
   line-height: 1.42;
 }
 
+/* General-purpose hyperlink-within-prose style. The global reset makes plain
+   <a> tags invisible (inherited color, no underline), so anywhere body copy
+   needs to link out to something it's describing - a paper, a study site,
+   an external profile - reach for this class instead of an unstyled <a>. */
+.text-link {
+  color: var(--teal-dark);
+  font-weight: 720;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+  color: var(--rose);
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;

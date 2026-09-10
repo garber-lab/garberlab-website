@@ -9,6 +9,7 @@ export type LabPerson = {
   institution?: string;
   workingOn?: string;
   link?: string;
+  linkLabel?: string;
 };
 
 export type PeopleGroup = {
@@ -180,7 +181,13 @@ export const peopleGroups: PeopleGroup[] = [
         name: "Alan Derr",
         dates: "",
         role: "Computational Biologist",
-        focus: "",
+        focus:
+          "I developed the [End Sequence Analysis Toolkit (ESAT)](https://doi.org/10.1101/gr.207902.116), which extracts additional information from single-cell RNA-seq data through 3' end sequencing, and built it into the core of the lab's single-cell analysis pipeline.",
+        image: "/people/alan_derr.jpeg",
+        currentRole: "Retired",
+        institution: "",
+        workingOn:
+          "Traveling the world, biking, cooking, and designing jewelry, and combining traveling and biking as much as possible",
       },
       {
         name: "Narayan Sadagopan",

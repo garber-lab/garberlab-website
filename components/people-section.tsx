@@ -1,5 +1,23 @@
 import { inMemoriam, peopleGroups, type LabPerson } from "../data/people";
 
+// Supports a minimal inline link syntax in prose text: [label](url), styled
+// via the site-wide .text-link class (see globals.css). Lets a bio hyperlink
+// the specific thing it's describing (e.g. a paper) instead of bolting on a
+// separate, out-of-context link button.
+function renderWithLinks(text: string) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, i) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (!match) return part;
+    const [, label, url] = match;
+    return (
+      <a key={i} className="text-link" href={url} target="_blank" rel="noopener noreferrer">
+        {label}
+      </a>
+    );
+  });
+}
+
 function getInitials(name: string) {
   return name
     .split(/\s+/)
@@ -32,7 +50,7 @@ function PersonCard({
         <h4>{person.name}</h4>
         <p className="person-dates">{person.dates}</p>
         {person.role ? <p className="person-role">{person.role}</p> : null}
-        {person.focus ? <p>{person.focus}</p> : null}
+        {person.focus ? <p>{renderWithLinks(person.focus)}</p> : null}
         {now || person.workingOn || person.link ? (
           <div className="person-now">
             {now ? (
@@ -48,7 +66,7 @@ function PersonCard({
             {person.link ? (
               <p className="person-now-line">
                 <a href={person.link} target="_blank" rel="noopener noreferrer">
-                  Profile ↗
+                  {person.linkLabel ?? "Profile ↗"}
                 </a>
               </p>
             ) : null}
