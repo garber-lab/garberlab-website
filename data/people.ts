@@ -54,6 +54,21 @@ export const peopleGroups: PeopleGroup[] = [
     hideAlumni: true,
   },
   {
+    title: "Lab administration",
+    current: [
+      {
+        name: "Heidi Beberman",
+        dates: "2011-present",
+        role: "Department Financial Administrator",
+        focus:
+          "Heidi is the department's financial administrator, and the person who keeps this lab running. She manages our finances and grants, listens to everyone, and always finds a way to help.",
+        image: "/people/Heidi_Beberman.jpg",
+      },
+    ],
+    alumni: [],
+    hideAlumni: true,
+  },
+  {
     title: "Graduate students",
     current: [
       {
