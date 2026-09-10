@@ -1,4 +1,10 @@
-import { coreChapters, coreIntro, corePeople, type CorePerson } from "../data/bioinformatics-core";
+import {
+  coreChapters,
+  coreIntro,
+  corePeople,
+  coreToday,
+  type CorePerson,
+} from "../data/bioinformatics-core";
 import { renderWithLinks } from "./render-with-links";
 
 function getInitials(name: string) {
@@ -60,6 +66,23 @@ export function CoreSection() {
             </div>
           </article>
         ))}
+
+        <article className="core-chapter">
+          <p className="core-period">{coreToday.period}</p>
+          <div className="core-chapter-body">
+            <h2>{coreToday.title}</h2>
+            <p>{coreToday.intro}</p>
+            <ul className="core-services">
+              {coreToday.services.map((service) => (
+                <li key={service}>{renderWithLinks(service)}</li>
+              ))}
+            </ul>
+            <p>
+              {coreToday.contactLead}{" "}
+              <a href={`mailto:${coreToday.email}`}>{coreToday.email}</a>.
+            </p>
+          </div>
+        </article>
       </div>
 
       <div className="core-people">
