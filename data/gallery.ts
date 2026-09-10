@@ -27,7 +27,7 @@ export const galleryPhotos: GalleryPhoto[] = [
   },
   {
     image: "/gallery/GCB_Faculty_Staff_and_Students_at_Research_Retreat.jpg",
-    caption: "GCB Attendees to the 2024 Umass Chan Retreat at Umass Amherst",
-    date: "Oct 2016"
+    caption: "GCB Attendees to the 2023 Umass Chan Retreat at Umass Amherst",
+    date: "Oct 2023"
   }
 ];
