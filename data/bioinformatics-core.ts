@@ -109,4 +109,6 @@ export const coreToday = {
   ],
   contactLead: "To start a project, email the core at",
   email: "biocore@umassmed.edu",
+  websiteLead: "or visit the core's website at",
+  website: "https://biocore.umassmed.edu",
 };

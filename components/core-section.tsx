@@ -79,7 +79,16 @@ export function CoreSection() {
             </ul>
             <p>
               {coreToday.contactLead}{" "}
-              <a href={`mailto:${coreToday.email}`}>{coreToday.email}</a>.
+              <a href={`mailto:${coreToday.email}`}>{coreToday.email}</a>,{" "}
+              {coreToday.websiteLead}{" "}
+              <a
+                href={coreToday.website}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {coreToday.website.replace(/^https?:\/\//, "")}
+              </a>
+              .
             </p>
           </div>
         </article>
