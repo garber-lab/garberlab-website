@@ -162,9 +162,9 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 8px 24px;
+  gap: 8px 18px;
   color: var(--ink-soft);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -922,6 +922,108 @@ h3 {
   background: rgba(255, 255, 255, 0.55);
 }
 
+.gallery {
+  padding: 92px 0;
+}
+
+.gallery-intro {
+  max-width: 820px;
+  margin-bottom: 36px;
+}
+
+.gallery-intro p {
+  color: var(--ink-soft);
+  font-size: 1.08rem;
+  line-height: 1.68;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.gallery-photo {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.gallery-photo:hover,
+.gallery-photo:focus-within {
+  z-index: 1000;
+}
+
+.gallery-photo-backdrop {
+  display: none;
+}
+
+.gallery-photo:hover .gallery-photo-backdrop,
+.gallery-photo:focus-within .gallery-photo-backdrop {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(5, 16, 14, 0.65);
+  /* Purely visual dimming - must not intercept the mouse, or hovering
+     ANYWHERE on screen counts as hovering this backdrop (a descendant of
+     the hovered figure), which keeps :hover true until the cursor leaves
+     the browser window entirely. This lets the pointer "see through" it
+     to whatever's actually underneath, so moving off the enlarged photo
+     correctly ends the hover state. */
+  pointer-events: none;
+}
+
+.gallery-photo img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--paper-warm);
+  cursor: zoom-in;
+}
+
+/* On hover/focus, the photo pops out full-size, centered on the viewport
+   (not just relative to its own grid cell) so it reads clearly regardless
+   of where in a long gallery page it happens to sit. Width/height are both
+   capped and object-fit is "contain", so portrait and landscape photos
+   both scale to fit without cropping or distortion. */
+.gallery-photo:hover img,
+.gallery-photo:focus-within img {
+  position: fixed;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(85vw, 1100px);
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+  box-shadow: 0 30px 80px rgba(5, 16, 14, 0.5);
+  cursor: zoom-out;
+}
+
+.gallery-photo figcaption {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.gallery-photo-date {
+  color: var(--muted);
+}
+
+.gallery-empty {
+  padding: 22px;
+  border: 1px dashed #b8c0b6;
+  border-radius: 8px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.55);
+}
+
 .people {
   padding-bottom: 92px;
 }
@@ -1350,6 +1452,64 @@ h3 {
   line-height: 1.6;
 }
 
+.commentary {
+  padding: 92px 0;
+  border-top: 1px solid var(--line);
+}
+
+.commentary-list {
+  display: grid;
+  gap: 0;
+}
+
+.commentary-item {
+  display: grid;
+  gap: 10px;
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+}
+
+.commentary-item:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.commentary-item:last-child {
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--line);
+}
+
+.commentary-meta time {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.commentary-body {
+  display: grid;
+  gap: 10px;
+}
+
+.commentary-body h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.32;
+}
+
+.commentary-body p {
+  margin: 0;
+  max-width: 820px;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.commentary-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
 .news-link {
   justify-self: start;
   color: var(--teal-dark);
@@ -1473,4 +1633,81 @@ h3 {
   .current-story {
     padding-bottom: 64px;
   }
+}
+
+.core {
+  padding: 92px 0;
+}
+
+.core-intro {
+  margin-bottom: 48px;
+}
+
+.core-chapters {
+  display: grid;
+  gap: 0;
+  max-width: 960px;
+}
+
+.core-chapter {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 24px;
+  padding: 36px 0;
+  border-top: 1px solid var(--line);
+}
+
+.core-chapter:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.core-period {
+  margin: 4px 0 0;
+  color: var(--teal);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.core-chapter-body {
+  display: grid;
+  gap: 14px;
+}
+
+.core-chapter-body h2 {
+  margin: 0;
+  font-size: 1.45rem;
+  line-height: 1.3;
+}
+
+.core-chapter-body p {
+  margin: 0;
+  max-width: 760px;
+  color: var(--ink-soft);
+  font-size: 1.04rem;
+  line-height: 1.68;
+}
+
+.core-people {
+  margin-top: 56px;
+  max-width: 960px;
+}
+
+@media (max-width: 720px) {
+  .core-chapter {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+}
+
+.core-services {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 8px;
+  max-width: 760px;
+  color: var(--ink-soft);
+  font-size: 1.04rem;
+  line-height: 1.68;
 }
