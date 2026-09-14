@@ -15,6 +15,11 @@ export const galleryPhotos: GalleryPhoto[] = [
     date: "May 2026",
   },
   {
+    image: "/gallery/yuming-graduation-2025.jpg",
+    caption: "Manuel and Yuming Cao on Yuming's graduation day",
+    date: "May 2025",
+  },
+  {
     image: "/gallery/mglab001.jpg",
     caption:
       "2018 Lab picture outside the Albert Sherman Building, from left to right: Manuel, Elisa, Pranitha, Alper, Patrick, Rachel, Alan, Onur and Yuming",
