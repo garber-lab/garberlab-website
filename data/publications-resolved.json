@@ -71,6 +71,15 @@
     "doi": "10.1093/bioinformatics/btp190",
     "url": "https://doi.org/10.1093/bioinformatics/btp190"
   },
+  "10.1101/gr.207902.116": {
+    "pmid": "27470110",
+    "title": "End Sequence Analysis Toolkit (ESAT) expands the extractable information from single-cell RNA-seq data.",
+    "authors": "Derr A, Yang C, Zilionis R, Sergushichev A, Blodgett DM, Redick S, Bortell R, Luban J, Harlan DM, Kadener S, Greiner DL, Klein A, Artyomov MN, Garber M.",
+    "journal": "Genome Res",
+    "year": "2016",
+    "doi": "10.1101/gr.207902.116",
+    "url": "https://doi.org/10.1101/gr.207902.116"
+  },
   "10.1126/scitranslmed.abd8995": {
     "pmid": "34516831",
     "title": "scRNA-seq of human vitiligo reveals complex networks of subclinical immune activation and a role for CCR5 in Treg function.",

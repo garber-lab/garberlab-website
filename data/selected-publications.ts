@@ -36,6 +36,10 @@ export const publicationSections: PublicationSectionSource[] = [
       "Early single-cell projects, including work built around in-house inDrop and related profiling approaches, shaped how we think about heterogeneous cellular responses.",
     publications: [
       {
+        doi: "10.1101/gr.207902.116",
+        note: "ESAT: we developed a 3' end bulk RNA-seq protocol and analysis method, then adapted it to 3' end single-cell RNA-seq. Our current single-cell pipeline still builds on this approach",
+      },
+      {
         doi: "10.1126/scitranslmed.abd8995",
         note: 
         "Our first application of in-drop to blister byopsies revealed a pre-clinical state in non-lesional skin and a key role for the IL15 receptor"
