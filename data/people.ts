@@ -43,7 +43,7 @@ export const peopleGroups: PeopleGroup[] = [
     current: [
       {
         name: "Manuel Garber",
-        dates: "2009-present",
+        dates: "2011-present",
         role: "Principal investigator",
         focus:
           "Systems immunology, regulatory genomics, and computational models of human inflammatory disease.",
@@ -58,7 +58,7 @@ export const peopleGroups: PeopleGroup[] = [
     current: [
       {
         name: "Heidi Beberman",
-        dates: "2011-present",
+        dates: "2013-present",
         role: "Department Financial Administrator",
         focus:
           "Heidi is the department's financial administrator, and the person who keeps this lab running. She manages our finances and grants, listens to everyone, and always finds a way to help.",
