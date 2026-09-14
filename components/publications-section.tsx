@@ -11,8 +11,17 @@ export function PublicationsSection({ selectedPublications }: PublicationsSectio
         <p className="kicker">Selected publications</p>
         <h1>Selected publications by theme</h1>
         <p>
-          These sections are built from DOI or PMID entries in a small editable data file. The short
-          descriptions are meant to explain how each set fits into the lab story.
+          A selection of our papers, grouped by theme, with a short note on how each set fits into
+          the lab story. For the complete list, see{" "}
+          <a
+            className="text-link"
+            href="https://scholar.google.com/citations?user=HlPjq-YAAAAJ&hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Manuel Garber&apos;s Google Scholar profile ↗
+          </a>
+          .
         </p>
       </div>
       <div className="publication-sections">
