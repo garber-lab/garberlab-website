@@ -22,7 +22,7 @@ export const galleryPhotos: GalleryPhoto[] = [
   {
     image: "/gallery/mglab001.jpg",
     caption:
-      "2018 Lab picture outside the Albert Sherman Building, from left to right: Manuel, Elisa, Pranitha, Alper, Patrick, Rachel, Alan, Onur and Yuming",
+      "2018 Lab picture outside the Albert Sherman Building, from left to right: Manuel, Elisa, Pranitha, Alper, Patrick, Rachel, Alan, Jake, Onur and Yuming",
     date: "2018",
   },
   {

@@ -90,6 +90,42 @@ export const peopleGroups: PeopleGroup[] = [
     ],
     alumni: [
       {
+        name: "Yuqing Wang",
+        dates: "March 2019 - June 2026",
+        role: "Graduate Student and Postdoctoral Fellow",
+        focus: "Investigating the molecular mechanisms of photosensitivity in autoimmune skin diseases, including dermatomyositis and cutaneous lupus erythematosus (CLE), through integrated multi-omics analyses encompassing single-cell RNA sequencing (scRNA-seq), proteomics, and spatial transcriptomics.",
+        currentRole: "Bioinformatics Scientist",
+        institution: "New England Biolabs, Inc.",
+        workingOn: "Enzyme characterization using NGS, pipeline development and automation.",
+        image: "/people/yuqing_wang.jpg",
+      },
+      {
+        name: "Yuming Cao",
+        dates: "Sept 2018 - May 2025",
+        role: "Graduate Student and Postdoctoral Fellow",
+        focus: "Investigated host-virus dynamics at single cell resolution in primary human cells.",
+        currentRole: "Computational Scientist",
+        institution: "Broad Institute of MIT and Harvard",
+        workingOn: "Computational tool development for large-scale single cell Perturb-seq screens",
+        image: "/people/yuming_cao.jpg"
+      },
+      {
+        name: "Jake Gellatly",
+        dates: "March 2016 - May 2021",
+        role: "Graduate Student",
+        // NOTE: old lab site lists him as "Kyle (Jake) Gellatly"
+        focus:
+          "With Patrick and Alan, I set up the lab's in-house inDrop system, and I developed the first single-cell analysis pipeline the lab used. During my PhD I focused on leveraging early single-cell blister biopsy data to identify the cell circuits underlying disease, leading the lab's first single-cell study of human vitiligo. That work laid the basis for all of the lab's skin autoimmunity projects since.",
+        // Placeholder crop from the 2018 lab photo (gallery/mglab001.jpg); replace with the
+        // photo Jake is sending (Sep 2026).
+        image: "/people/jake_gellatly.jpg",
+        currentRole: "Director of Product",
+        institution: "FoxyAI, an AI real estate company",
+        workingOn: "Applying vision-language models to solve problems for FoxyAI's customers",
+        link: "https://foxyai.com",
+        linkLabel: "foxyai.com ↗",
+      },
+      {
         name: "Pranitha Vangala",
         dates: "Sept 2014 - May 2020",
         role: "Graduate Student and Postdoctoral Fellow",
@@ -101,37 +137,13 @@ export const peopleGroups: PeopleGroup[] = [
         image: "/people/pranitha-vangala.png",
       },
       {
-        name: "Yuming Cao",
-        dates: "Sept 2018 - May 2024",
-        role: "Graduate Student and Postdoctoral Fellow",
-        focus: "Investigated host-virus dynamics at single cell resolution in primary human cells.",
-        currentRole: "Computational Scientist",
-        institution: "Broad Institute of MIT and Harvard",
-        workingOn: "Computational tool development for large-scale single cell Perturb-seq screens",
-        image: "/people/yuming_cao.jpg"
-      },
-      {
-        name: "Yuqing Wang",
-        dates: "March 2019 - Feb 2027",
-        role: "Graduate Student and Postdoctoral Fellow",
-        focus: "Investigating the molecular mechanisms of photosensitivity in autoimmune skin diseases, including dermatomyositis and cutaneous lupus erythematosus (CLE), through integrated multi-omics analyses encompassing single-cell RNA sequencing (scRNA-seq), proteomics, and spatial transcriptomics.",
-        currentRole: "Bioinformatics Scientist",
-        institution: "New England Biolabs, Inc.",
-        workingOn: "Enzyme characterization using NGS, pipeline development and automation.",
-        image: "/people/yuqing_wang.jpg",
-      },
-      {
-        name: "Jake Gellatly",
-        dates: "March 2016 - May 2021",
-        role: "Graduate Student",
-        // NOTE: old lab site lists him as "Kyle (Jake) Gellatly"
-        focus: "",
-      },
-      {
         name: "Shaked Afik",
-        dates: "",
-        role: "Visiting Masters Student",
-        focus: "",
+        dates: "2012-2013",
+        role: "Visiting Graduate Student",
+        // Consortium confirmed by Manuel (Sep 2026): the Human Islet Research Network (HIRN),
+        // NIDDK UC4 DK104218 (Greiner). The paper was also funded under U01 DK089572.
+        focus:
+          "I worked on type 1 diabetes, analyzing RNA-seq of highly purified human adult and fetal islet alpha and beta cells with the Harlan and Greiner labs as part of the Human Islet Research Network (HIRN) effort. I also developed methods for 3' end RNA-seq analysis, defining transcription start and polyadenylation sites genome-wide. I went on to Nir Yosef's lab at UC Berkeley as a PhD student.",
         // Photo available on the old site:
         // umassmed.edu/globalassets/garber-lab/images/alumni/shaked.affik.png
         // image: "/people/shaked-afik.jpg",
@@ -175,20 +187,20 @@ export const peopleGroups: PeopleGroup[] = [
         image: "/people/carolina-salomao-lopes.jpg",
       },
       {
-        name: "Sandhiya Ravi",
-        dates: "2026-present",
-        role: "Computational Biologist",
-        focus:
-          "I apply computational and AI/ML approaches to analyze single-cell and spatial transcriptomic data. My current work includes developing gene-expression scoring methods and studying cellular responses and states in inflammatory skin diseases.",
-        image: "/people/Sandhiya_ravi.png",
-      },
-      {
         name: "Thomas Jacob",
         dates: "2023-present",
         role: "Bioinformatician",
         focus:
           "I am the bioinformatician and data scientist for the VIGOR study, a longitudinal vitiligo family study aimed at identifying the genetic and environmental causes of the disease. I build and maintain computational workflows to harmonize study data, derive insights from complex genomic datasets, integrate wearable biometrics (e.g., Fitbit data), and manage the cohort across platforms. My current focus is developing pipelines to evaluate genomic risk scores in the VIGOR cohort to better understand how a person's genome influences vitiligo onset.",
         image: "/people/thomas_jacob.jpg",
+      },
+      {
+        name: "Sandhiya Ravi",
+        dates: "2026-present",
+        role: "Computational Biologist",
+        focus:
+          "I apply computational and AI/ML approaches to analyze single-cell and spatial transcriptomic data. My current work includes developing gene-expression scoring methods and studying cellular responses and states in inflammatory skin diseases.",
+        image: "/people/Sandhiya_ravi.png",
       },
     ],
     alumni: [
