@@ -79,9 +79,12 @@ export function CoreSection() {
             </ul>
             <p>
               {coreToday.contactLead}{" "}
-              <a href={`mailto:${coreToday.email}`}>{coreToday.email}</a>,{" "}
+              <a className="text-link" href={`mailto:${coreToday.email}`}>
+                {coreToday.email}
+              </a>,{" "}
               {coreToday.websiteLead}{" "}
               <a
+                className="text-link"
                 href={coreToday.website}
                 target="_blank"
                 rel="noopener noreferrer"

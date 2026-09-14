@@ -80,6 +80,12 @@ export const coreChapters: CoreChapter[] = [
 
 export const corePeople: CorePerson[] = [
   {
+    name: "Hennady Shulha",
+    role: "Ran the core, 2011 to 2013",
+    bio: "Hennady ran the core's analysis in its first years on a Perl-based system he wrote himself, and was a co-author on the Davis lab's [Cell Metabolism 2014](https://doi.org/10.1016/j.cmet.2014.06.010) paper. He is now a statistician at the Vaccine Evaluation Center at the University of British Columbia in Vancouver.",
+    image: "/people/Hennady_shulha.jpg",
+  },
+  {
     name: "Alper Kucukural",
     role: "Associate Professor; Co-Director of the Bioinformatics Core",
     bio: "Alper led the core's platform development from Dolphin through DolphinNext, co-founded Via Scientific as its chief technology officer, and returned to UMass Chan to co-direct the core and lead its AI-focused reinvention.",
