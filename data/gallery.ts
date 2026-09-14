@@ -9,6 +9,12 @@ export type GalleryPhoto = {
 // but order here is exactly the display order (no auto-sorting).
 export const galleryPhotos: GalleryPhoto[] = [
   {
+    image: "/gallery/yuqing-graduation-2026.jpg",
+    caption:
+      "Manuel, Yuqing and Mehdi Rashighi on Yuqing Wang's graduation day",
+    date: "May 2026",
+  },
+  {
     image: "/gallery/mglab001.jpg",
     caption:
       "2018 Lab picture outside the Albert Sherman Building, from left to right: Manuel, Elisa, Pranitha, Alper, Patrick, Rachel, Alan, Onur and Yuming",
