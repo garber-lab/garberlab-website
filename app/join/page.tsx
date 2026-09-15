@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { JoinSection } from "../../components/join-section";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/join" },
   title: "Join",
   description: "Join the Garber Lab: postdoc, graduate student, and collaborator opportunities.",
 };

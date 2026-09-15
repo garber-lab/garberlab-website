@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { CommentarySection } from "../../components/commentary-section";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/commentary" },
   title: "Commentary",
   description: "Manuel Garber's notes and reactions to papers and ideas, cross-posted from LinkedIn.",
 };

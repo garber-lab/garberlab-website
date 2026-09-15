@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ResourcesSection } from "../../components/resources-section";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/resources" },
   title: "Resources",
   description:
     "Interactive data portals and open-source software from the Garber Lab, including the Skin Omics Explorer, the vitiligo single-cell portal, and slncky.",

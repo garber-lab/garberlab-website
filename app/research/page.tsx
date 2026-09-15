@@ -5,6 +5,7 @@ import { ResearchHero } from "../../components/research-hero";
 import { ResearchSection } from "../../components/research-section";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/research" },
   title: "Research",
   description:
     "How the Garber Lab studies autoimmunity and autoinflammatory skin disease through genetics, cytokine response, and spatial genomics.",

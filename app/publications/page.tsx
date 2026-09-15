@@ -3,6 +3,7 @@ import { PublicationsSection } from "../../components/publications-section";
 import { getSelectedPublications } from "../../lib/publications";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/publications" },
   title: "Publications",
   description: "Selected publications from the Garber Lab, grouped by research theme.",
 };
