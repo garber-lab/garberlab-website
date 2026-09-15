@@ -10,7 +10,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "resolve-publications": "node --experimental-strip-types scripts/resolve-publications.ts"
+    "resolve-publications": "node --experimental-strip-types scripts/resolve-publications.ts",
+    "test": "node --test --experimental-strip-types worker/lib.test.ts",
+    "typecheck:worker": "tsc -p worker/tsconfig.json",
+    "dev:worker": "npm run build && wrangler dev",
+    "db:migrate:local": "wrangler d1 migrations apply garberlab-analytics --local",
+    "db:migrate:remote": "wrangler d1 migrations apply garberlab-analytics --remote"
   },
   "dependencies": {
     "next": "16.2.6",
@@ -18,6 +23,7 @@
     "react-dom": "19.2.6"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "5.20260915.1",
     "@tailwindcss/postcss": "4.2.1",
     "@types/node": "22.19.19",
     "@types/react": "19.2.14",
@@ -25,7 +31,8 @@
     "eslint": "9.39.4",
     "eslint-config-next": "16.2.6",
     "tailwindcss": "4.2.1",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "wrangler": "4.131.2"
   },
   "type": "module"
 }

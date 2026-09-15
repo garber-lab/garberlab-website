@@ -1,7 +1,24 @@
 {
   "name": "garberlab-website",
   "compatibility_date": "2026-07-27",
+  // Handles the engagement beacon and the /admin dashboard. Everything else is
+  // served straight from the static export without invoking the Worker.
+  "main": "worker/index.ts",
   "assets": {
-    "directory": "./out"
-  }
+    "directory": "./out",
+    "binding": "ASSETS",
+    "run_worker_first": ["/_t", "/admin", "/admin/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "garberlab-analytics",
+      // Replace with the id printed by `npx wrangler d1 create garberlab-analytics`.
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations"
+    }
+  ],
+  // Daily retention job, see scheduled() in worker/index.ts.
+  "triggers": { "crons": ["17 7 * * *"] },
+  "observability": { "enabled": true }
 }

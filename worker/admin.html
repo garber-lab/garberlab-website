@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Garber Lab engagement</title>
+<style>
+  :root {
+    --bg: #f7f7f5; --panel: #ffffff; --ink: #1d1f23; --ink-2: #4a4f57; --muted: #7a808a;
+    --line: #e3e4e0; --accent: #2a64c5; --accent-soft: #e6eefb; --bar: #3b73d1; --row-hover: #f2f4f7;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15171a; --panel: #1d2024; --ink: #e8e9eb; --ink-2: #b9bdc4; --muted: #8b919a;
+      --line: #2e3238; --accent: #7aa7f0; --accent-soft: #22324d; --bar: #6f9eec; --row-hover: #252a30;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { padding: 20px 20px 0; max-width: 1400px; margin: 0 auto; }
+  h1 { font-size: 18px; margin: 0 0 4px; font-weight: 650; }
+  .sub { color: var(--muted); margin: 0 0 16px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; padding: 10px 0 14px; border-bottom: 1px solid var(--line); }
+  .controls label { display: inline-flex; gap: 6px; align-items: center; color: var(--ink-2); }
+  select, input[type=search], button { font: inherit; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px; }
+  button { cursor: pointer; }
+  button:hover { border-color: var(--accent); }
+  nav { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 14px; }
+  nav button { border: none; background: transparent; padding: 7px 12px; border-radius: 6px; color: var(--ink-2); }
+  nav button[aria-selected=true] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+  main { max-width: 1400px; margin: 0 auto; padding: 16px 20px 60px; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 18px; }
+  .tile { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+  .tile .k { color: var(--muted); font-size: 12px; }
+  .tile .v { font-size: 26px; font-weight: 650; font-variant-numeric: tabular-nums; }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin-bottom: 18px; }
+  .panel h2 { font-size: 14px; margin: 0 0 10px; font-weight: 650; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; }
+  .grid2 .panel { margin-bottom: 0; }
+  .chart { position: relative; }
+  .chart svg { display: block; width: 100%; height: 200px; }
+  .chart .axis { fill: var(--muted); font-size: 11px; }
+  .chart .grid { stroke: var(--line); stroke-width: 1; }
+  .chart .bar { fill: var(--bar); }
+  .chart .hit { fill: transparent; }
+  .chart .bar.on { fill: var(--accent); opacity: .8; }
+  .tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); padding: 5px 8px; border-radius: 6px; font-size: 12px; white-space: nowrap; transform: translate(-50%, -110%); }
+  .tablebar { display: flex; gap: 10px; align-items: center; justify-content: space-between; margin-bottom: 8px; flex-wrap: wrap; }
+  .tablebar .count { color: var(--muted); }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 12px; color: var(--muted); font-weight: 600; cursor: pointer; -webkit-user-select: none; user-select: none; white-space: nowrap; }
+  th.num, td.num { text-align: right; }
+  th[aria-sort=ascending]::after { content: " \25B2"; }
+  th[aria-sort=descending]::after { content: " \25BC"; }
+  tbody tr:hover { background: var(--row-hover); }
+  td .small { color: var(--muted); font-size: 12px; }
+  td.wrap { min-width: 220px; max-width: 420px; }
+  td.nowrap { white-space: nowrap; }
+  a.link { color: var(--accent); cursor: pointer; text-decoration: none; }
+  a.link:hover { text-decoration: underline; }
+  .pill { display: inline-block; padding: 0 6px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); font-size: 11px; margin-left: 4px; }
+  .empty, .error { color: var(--muted); padding: 20px 4px; }
+  .error { color: #c0392b; }
+  .meter { display: inline-block; width: 60px; height: 6px; background: var(--line); border-radius: 3px; vertical-align: middle; margin-right: 6px; overflow: hidden; }
+  .meter i { display: block; height: 100%; background: var(--bar); border-radius: 3px; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Garber Lab engagement</h1>
+  <p class="sub">Visitors to garberlab.umassmed.edu: who they are, what they read, what they click.</p>
+  <div class="controls">
+    <label>Range
+      <select id="days">
+        <option value="1">Last 24 hours</option>
+        <option value="7">Last 7 days</option>
+        <option value="30" selected>Last 30 days</option>
+        <option value="90">Last 90 days</option>
+        <option value="365">Last 12 months</option>
+      </select>
+    </label>
+    <label><input type="checkbox" id="hideUmass"> Hide UMass networks</label>
+    <label><input type="checkbox" id="bots"> Include bots</label>
+    <button id="refresh" type="button">Refresh</button>
+  </div>
+  <nav role="tablist">
+    <button type="button" role="tab" data-tab="overview" aria-selected="true">Overview</button>
+    <button type="button" role="tab" data-tab="orgs" aria-selected="false">Organizations</button>
+    <button type="button" role="tab" data-tab="sessions" aria-selected="false">Sessions</button>
+    <button type="button" role="tab" data-tab="content" aria-selected="false">Content</button>
+    <button type="button" role="tab" data-tab="referrers" aria-selected="false">Sources</button>
+  </nav>
+</header>
+<main id="view"></main>
+
+<script>
+(function () {
+  "use strict";
+
+  var view = document.getElementById("view");
+  var state = { tab: "overview", org: null };
+
+  function el(tag, attrs, children) {
+    var node = document.createElement(tag);
+    if (attrs) for (var key in attrs) {
+      if (key === "text") node.textContent = attrs[key];
+      else if (key === "class") node.className = attrs[key];
+      else if (key.slice(0, 2) === "on") node.addEventListener(key.slice(2), attrs[key]);
+      else node.setAttribute(key, attrs[key]);
+    }
+    (children || []).forEach(function (child) {
+      if (child == null) return;
+      node.appendChild(typeof child === "string" ? document.createTextNode(child) : child);
+    });
+    return node;
+  }
+
+  function query() {
+    var params = new URLSearchParams({
+      days: document.getElementById("days").value,
+      bots: document.getElementById("bots").checked ? "1" : "0",
+      hideUmass: document.getElementById("hideUmass").checked ? "1" : "0",
+      tzo: String(new Date().getTimezoneOffset())
+    });
+    return params;
+  }
+
+  function api(name, extra) {
+    var params = query();
+    if (extra) for (var key in extra) params.set(key, extra[key]);
+    return fetch("/admin/api/" + name + "?" + params.toString(), { credentials: "same-origin" }).then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    });
+  }
+
+  // ---- formatting -------------------------------------------------------
+  var dateFmt = new Intl.DateTimeFormat(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+  function when(ts) { return ts ? dateFmt.format(new Date(ts)) : ""; }
+  function num(n) { return n == null ? "" : Number(n).toLocaleString(); }
+  function secs(s) {
+    if (!s) return "0s";
+    s = Math.round(s);
+    if (s < 60) return s + "s";
+    var m = Math.floor(s / 60);
+    return m < 60 ? m + "m " + (s % 60) + "s" : Math.floor(m / 60) + "h " + (m % 60) + "m";
+  }
+  function flag(cc) {
+    if (!cc || cc.length !== 2 || cc === "??" || cc === "XX" || cc === "T1") return "";
+    return String.fromCodePoint.apply(null, cc.toUpperCase().split("").map(function (c) { return 127397 + c.charCodeAt(0); }));
+  }
+  function browser(ua) {
+    if (!ua) return "";
+    var os = /iPhone|iPad/.test(ua) ? "iOS" : /Android/.test(ua) ? "Android" : /Mac OS X/.test(ua) ? "macOS" : /Windows/.test(ua) ? "Windows" : /Linux/.test(ua) ? "Linux" : "";
+    var b = /Edg\//.test(ua) ? "Edge" : /Firefox\//.test(ua) ? "Firefox" : /Chrome\//.test(ua) ? "Chrome" : /Safari\//.test(ua) ? "Safari" : "Other";
+    return b + (os ? " / " + os : "");
+  }
+  function small(text) { return text ? el("div", { class: "small", text: text }) : null; }
+
+  // ---- table ------------------------------------------------------------
+  // columns: { key, label, num, render(row) -> node|string, value(row) -> sortable/csv value }
+  function table(title, columns, rows, opts) {
+    opts = opts || {};
+    var panel = el("section", { class: "panel" });
+    var filter = el("input", { type: "search", placeholder: "Filter", "aria-label": "Filter " + title });
+    var count = el("span", { class: "count" });
+    var csv = el("button", { type: "button", text: "CSV" });
+    panel.appendChild(el("div", { class: "tablebar" }, [
+      el("h2", { text: title }), el("div", null, [count, " ", filter, " ", csv])
+    ]));
+    var sortKey = opts.sort || null, sortDir = opts.dir || -1;
+    var thead = el("thead"), tbody = el("tbody");
+    panel.appendChild(el("div", { class: "scroll" }, [el("table", null, [thead, tbody])]));
+
+    function valueOf(col, row) { return col.value ? col.value(row) : row[col.key]; }
+
+    function visibleRows() {
+      var needle = filter.value.trim().toLowerCase();
+      var list = rows.filter(function (row) {
+        if (!needle) return true;
+        return columns.some(function (col) { var v = valueOf(col, row); return v != null && String(v).toLowerCase().indexOf(needle) >= 0; });
+      });
+      if (sortKey) {
+        var col = columns.filter(function (c) { return c.key === sortKey; })[0];
+        list.sort(function (a, b) {
+          var x = valueOf(col, a), y = valueOf(col, b);
+          if (x == null) return 1; if (y == null) return -1;
+          return (typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y))) * sortDir;
+        });
+      }
+      return list;
+    }
+
+    function draw() {
+      thead.textContent = "";
+      thead.appendChild(el("tr", null, columns.map(function (col) {
+        var th = el("th", { class: col.num ? "num" : "", text: col.label, scope: "col" });
+        if (col.key === sortKey) th.setAttribute("aria-sort", sortDir > 0 ? "ascending" : "descending");
+        th.addEventListener("click", function () {
+          if (sortKey === col.key) sortDir = -sortDir; else { sortKey = col.key; sortDir = col.num ? -1 : 1; }
+          draw();
+        });
+        return th;
+      })));
+      var list = visibleRows();
+      count.textContent = list.length + " of " + rows.length;
+      tbody.textContent = "";
+      if (!list.length) {
+        tbody.appendChild(el("tr", null, [el("td", { colspan: String(columns.length), class: "empty", text: "No data for this range." })]));
+        return;
+      }
+      list.forEach(function (row) {
+        tbody.appendChild(el("tr", null, columns.map(function (col) {
+          var content = col.render ? col.render(row) : valueOf(col, row);
+          var td = el("td", { class: (col.num ? "num " : "") + (col.wrap ? "wrap " : "") + (col.nowrap ? "nowrap" : "") });
+          if (content != null) td.appendChild(typeof content === "object" ? content : document.createTextNode(String(content)));
+          return td;
+        })));
+      });
+    }
+
+    filter.addEventListener("input", draw);
+    csv.addEventListener("click", function () {
+      var lines = [columns.map(function (c) { return c.label; })].concat(visibleRows().map(function (row) {
+        return columns.map(function (col) { var v = valueOf(col, row); return v == null ? "" : String(v); });
+      }));
+      var text = lines.map(function (line) {
+        return line.map(function (cell) { return /[",\n]/.test(cell) ? '"' + cell.replace(/"/g, '""') + '"' : cell; }).join(",");
+      }).join("\n");
+      var link = el("a", { href: URL.createObjectURL(new Blob([text], { type: "text/csv" })), download: (opts.file || "export") + ".csv" });
+      document.body.appendChild(link); link.click(); link.remove();
+    });
+    draw();
+    return panel;
+  }
+
+  // ---- chart ------------------------------------------------------------
+  function dailyChart(daily, days) {
+    var byDay = {};
+    daily.forEach(function (d) { byDay[d.day] = d; });
+    var series = [];
+    var span = Math.max(1, Number(days));
+    for (var i = span - 1; i >= 0; i--) {
+      var d = new Date(Date.now() - i * 86400000);
+      var key = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+      series.push({ day: key, sessions: byDay[key] ? byDay[key].sessions : 0, orgs: byDay[key] ? byDay[key].orgs : 0 });
+    }
+    var W = 1000, H = 200, padL = 36, padB = 22, padT = 8;
+    var max = Math.max(4, Math.max.apply(null, series.map(function (s) { return s.sessions; })));
+    var nice = Math.ceil(max / 4) * 4;
+    var slot = (W - padL) / series.length;
+    var barW = Math.max(2, slot - 2);
+    var ns = "http://www.w3.org/2000/svg";
+    function s(tag, attrs) { var n = document.createElementNS(ns, tag); for (var k in attrs) n.setAttribute(k, attrs[k]); return n; }
+    var svg = s("svg", { viewBox: "0 0 " + W + " " + H, preserveAspectRatio: "none", role: "img", "aria-label": "Sessions per day" });
+    for (var g = 0; g <= 4; g++) {
+      var y = padT + (H - padT - padB) * (1 - g / 4);
+      svg.appendChild(s("line", { x1: padL, x2: W, y1: y, y2: y, class: "grid" }));
+      var label = s("text", { x: padL - 6, y: y + 4, "text-anchor": "end", class: "axis" });
+      label.textContent = String(nice * g / 4);
+      svg.appendChild(label);
+    }
+    var wrap = el("div", { class: "chart" });
+    var tip = el("div", { class: "tip", hidden: "" });
+    var every = Math.ceil(series.length / 8);
+    series.forEach(function (pt, idx) {
+      var h = (H - padT - padB) * pt.sessions / nice;
+      var x = padL + idx * slot + 1;
+      var top = H - padB - h;
+      var hit = s("rect", { x: padL + idx * slot, y: padT, width: slot, height: H - padT - padB, class: "hit" });
+      // Rounded top, square baseline.
+      var r = Math.min(4, barW / 2, h);
+      var bar = s("path", { class: "bar", d: h <= 0 ? "" :
+        "M" + x + "," + (H - padB) + "V" + (top + r) + "Q" + x + "," + top + " " + (x + r) + "," + top +
+        "H" + (x + barW - r) + "Q" + (x + barW) + "," + top + " " + (x + barW) + "," + (top + r) + "V" + (H - padB) + "Z" });
+      hit.addEventListener("mouseenter", function () {
+        tip.hidden = false;
+        bar.classList.add("on");
+        tip.textContent = pt.day + ": " + pt.sessions + " sessions, " + pt.orgs + " orgs";
+        var rect = svg.getBoundingClientRect();
+        tip.style.left = ((x + barW / 2) / W * rect.width) + "px";
+        tip.style.top = (Math.max(top, padT + 20) / H * rect.height) + "px";
+      });
+      hit.addEventListener("mouseleave", function () { tip.hidden = true; bar.classList.remove("on"); });
+      svg.appendChild(hit);
+      svg.appendChild(bar);
+      // Label every Nth day; the last day only when it will not collide with the previous label.
+      var last = idx === series.length - 1;
+      if (last || (idx % every === 0 && series.length - 1 - idx >= every / 2)) {
+        var t = s("text", { x: x + barW / 2, y: H - 6, "text-anchor": "middle", class: "axis" });
+        t.textContent = pt.day.slice(5);
+        svg.appendChild(t);
+      }
+    });
+    wrap.appendChild(svg);
+    wrap.appendChild(tip);
+    return wrap;
+  }
+
+  function meter(pct) {
+    var p = Math.max(0, Math.min(100, pct || 0));
+    return el("span", null, [el("span", { class: "meter" }, [el("i", { style: "width:" + p + "%" })]), p + "%"]);
+  }
+
+  // ---- tabs -------------------------------------------------------------
+  var tabs = {
+    overview: function () {
+      return api("overview").then(function (data) {
+        var t = data.totals;
+        var tile = function (k, v) { return el("div", { class: "tile" }, [el("div", { class: "k", text: k }), el("div", { class: "v", text: v })]); };
+        return [
+          el("div", { class: "tiles" }, [
+            tile("Sessions", num(t.sessions)),
+            tile("Page views", num(t.pageviews)),
+            tile("Organizations", num(t.orgs)),
+            tile("Unique IPs", num(t.ips)),
+            tile("Engaged (30s+)", num(t.engaged)),
+            tile("Median time", secs(t.medianDwell))
+          ]),
+          el("section", { class: "panel" }, [el("h2", { text: "Sessions per day" }), dailyChart(data.daily, document.getElementById("days").value)]),
+          el("div", { class: "grid2" }, [
+            table("Landing pages", [
+              { key: "page", label: "Page" },
+              { key: "sessions", label: "Sessions", num: true }
+            ], data.landing, { sort: "sessions", file: "landing-pages" }),
+            table("Countries", [
+              { key: "country", label: "Country", render: function (r) { return flag(r.country) + " " + r.country; } },
+              { key: "sessions", label: "Sessions", num: true }
+            ], data.countries, { sort: "sessions", file: "countries" })
+          ])
+        ];
+      });
+    },
+
+    orgs: function () {
+      return api("orgs").then(function (data) {
+        return [table("Who is visiting", [
+          { key: "org", label: "Organization", render: function (r) {
+            return el("div", null, [
+              el("a", { class: "link", text: r.org, onclick: function () { state.org = r.org; select("sessions"); } }),
+              small([r.domains, r.asn ? "AS" + r.asn : ""].filter(Boolean).join("  ·  "))
+            ]);
+          } },
+          { key: "places", label: "Places", wrap: true },
+          { key: "sessions", label: "Sessions", num: true },
+          { key: "ips", label: "IPs", num: true },
+          { key: "pageviews", label: "Page views", num: true },
+          { key: "dwell", label: "Total time", num: true, render: function (r) { return secs(r.dwell); } },
+          { key: "last_ts", label: "Last seen", num: true, nowrap: true, render: function (r) { return when(r.last_ts); } },
+          { key: "pages", label: "Pages (views)", wrap: true }
+        ], data.orgs, { sort: "sessions", file: "organizations" })];
+      });
+    },
+
+    sessions: function () {
+      var extra = state.org ? { org: state.org } : null;
+      return api("sessions", extra).then(function (data) {
+        var nodes = [];
+        if (state.org) {
+          nodes.push(el("p", null, [
+            "Showing sessions from ", el("strong", { text: state.org }), ". ",
+            el("a", { class: "link", text: "Show all", onclick: function () { state.org = null; select("sessions"); } })
+          ]));
+        }
+        nodes.push(table("Sessions", [
+          { key: "first_ts", label: "Start", num: true, nowrap: true, render: function (r) {
+            return el("div", null, [when(r.first_ts), small(secs(r.max_dwell) + ", " + r.max_scroll + "% scroll")]);
+          } },
+          { key: "org", label: "Organization", render: function (r) {
+            return el("div", null, [
+              r.org, r.is_bot ? el("span", { class: "pill", text: "bot" }) : null,
+              small(r.rdns || ""),
+              small([r.ip, r.via_proxy ? "via proxy" : ""].filter(Boolean).join(" "))
+            ]);
+          } },
+          { key: "city", label: "Place", render: function (r) {
+            return el("div", null, [flag(r.country) + " " + [r.city, r.region, r.country].filter(Boolean).join(", "), small(r.tz)]);
+          } },
+          { key: "pages", label: "Pages", wrap: true },
+          { key: "sections", label: "Sections seen", wrap: true, render: function (r) { return r.sections ? r.sections.split(",").join(", ") : ""; } },
+          { key: "clicks", label: "Clicks", wrap: true },
+          { key: "referrer_host", label: "Source", render: function (r) {
+            var utm = [r.utm_source, r.utm_medium, r.utm_campaign].filter(Boolean).join(" / ");
+            return el("div", null, [r.referrer_host || "direct", small(utm), small(r.ref ? "ref=" + r.ref : "")]);
+          } },
+          { key: "ua", label: "Browser", value: function (r) { return browser(r.ua); }, render: function (r) {
+            return el("div", null, [browser(r.ua), small(r.lang)]);
+          } },
+          { key: "max_dwell", label: "Time", num: true, render: function (r) { return secs(r.max_dwell); } }
+        ], data.sessions, { sort: "first_ts", file: "sessions" }));
+        return nodes;
+      });
+    },
+
+    content: function () {
+      return api("content").then(function (data) {
+        var time = {};
+        data.time.forEach(function (t) { time[t.page] = t; });
+        var pages = data.pages.map(function (p) {
+          var t = time[p.page] || {};
+          return { page: p.page, opens: p.opens, sessions: p.sessions, avg_seconds: t.avg_seconds || 0, avg_scroll: t.avg_scroll || 0 };
+        });
+        return [
+          table("Pages", [
+            { key: "page", label: "Page" },
+            { key: "opens", label: "Views", num: true },
+            { key: "sessions", label: "Sessions", num: true },
+            { key: "avg_seconds", label: "Avg time", num: true, render: function (r) { return secs(r.avg_seconds); } },
+            { key: "avg_scroll", label: "Avg scroll", num: true, render: function (r) { return meter(r.avg_scroll); } }
+          ], pages, { sort: "opens", file: "pages" }),
+          table("Sections: share of page views that reached each section", [
+            { key: "page", label: "Page" },
+            { key: "section", label: "Section" },
+            { key: "views", label: "Views", num: true },
+            { key: "reach", label: "Reach", num: true, render: function (r) { return meter(r.reach); } }
+          ], data.sections, { sort: "views", file: "sections" }),
+          table("Clicks: publications, resources, outbound links", [
+            { key: "target", label: "Target", wrap: true, render: function (r) { return el("div", null, [r.target, small(r.text)]); } },
+            { key: "clicks", label: "Clicks", num: true },
+            { key: "sessions", label: "Sessions", num: true },
+            { key: "pages", label: "From pages", wrap: true }
+          ], data.clicks, { sort: "clicks", file: "clicks" })
+        ];
+      });
+    },
+
+    referrers: function () {
+      return api("referrers").then(function (data) {
+        return [
+          table("Traffic sources", [
+            { key: "source", label: "Referrer" },
+            { key: "sessions", label: "Sessions", num: true },
+            { key: "orgs", label: "Organizations", num: true },
+            { key: "avg_dwell", label: "Avg time", num: true, render: function (r) { return secs(r.avg_dwell); } }
+          ], data.hosts, { sort: "sessions", file: "sources" }),
+          table("Campaign links (utm_* and ?ref=)", [
+            { key: "utm_source", label: "Source" },
+            { key: "utm_medium", label: "Medium" },
+            { key: "utm_campaign", label: "Campaign" },
+            { key: "ref", label: "ref" },
+            { key: "sessions", label: "Sessions", num: true },
+            { key: "last_ts", label: "Last seen", num: true, render: function (r) { return when(r.last_ts); } }
+          ], data.campaigns, { sort: "sessions", file: "campaigns" })
+        ];
+      });
+    }
+  };
+
+  var loadToken = 0;
+  function select(tab) {
+    state.tab = tab;
+    if (tab !== "sessions") state.org = null;
+    document.querySelectorAll("nav button").forEach(function (b) { b.setAttribute("aria-selected", String(b.dataset.tab === tab)); });
+    var token = ++loadToken;
+    view.textContent = "";
+    view.appendChild(el("div", { class: "empty", text: "Loading..." }));
+    tabs[tab]().then(function (nodes) {
+      if (token !== loadToken) return;
+      view.textContent = "";
+      nodes.forEach(function (n) { view.appendChild(n); });
+    }).catch(function (error) {
+      if (token !== loadToken) return;
+      view.textContent = "";
+      view.appendChild(el("div", { class: "error", text: "Could not load data (" + error.message + ")." }));
+    });
+  }
+
+  document.querySelectorAll("nav button").forEach(function (b) { b.addEventListener("click", function () { select(b.dataset.tab); }); });
+  ["days", "bots", "hideUmass"].forEach(function (id) { document.getElementById(id).addEventListener("change", function () { select(state.tab); }); });
+  document.getElementById("refresh").addEventListener("click", function () { select(state.tab); });
+  select("overview");
+})();
+</script>
+</body>
+</html>
