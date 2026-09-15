@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "../components/analytics";
 import { SiteHeader } from "../components/site-header";
 import { SiteFooter } from "../components/site-footer";
+import { siteUrl } from "../data/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,6 +17,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  openGraph: {
+    type: "website",
+    siteName: "Garber Lab",
+    locale: "en_US",
+    images: [{ url: "/assets/hero-tissue.webp", alt: "Garber Lab" }],
+  },
   title: {
     default: "Garber Lab | Computational Genomics and Skin Immunobiology",
     template: "%s | Garber Lab",
@@ -40,6 +49,7 @@ export default function RootLayout({
         <SiteHeader />
         {children}
         <SiteFooter />
+        <Analytics />
         <script
           defer
           type="module"

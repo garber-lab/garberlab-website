@@ -49,3 +49,7 @@ next-env.d.ts
 # source files that shouldn't end up served from public/
 public/**/*.pptx
 public/**/~$*
+
+# wrangler
+.wrangler/
+.dev.vars*
