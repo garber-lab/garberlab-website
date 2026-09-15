@@ -55,6 +55,9 @@ test("isAllowedSource only accepts the lab site hosts", () => {
   assert.ok(isAllowedSource(null, "https://garberlab.umassmed.edu/"));
   assert.ok(isAllowedSource("https://garberlab-website.manuel-garber.workers.dev", null));
   assert.ok(isAllowedSource("http://localhost:8787", null));
+  assert.ok(isAllowedSource(null, "https://analytics-preview-garberlab-website.manuel-garber.workers.dev/"));
+  assert.equal(isAllowedSource(null, "https://garberlab-website.someone-else.workers.dev/"), false);
+  assert.equal(isAllowedSource(null, "https://evil-garberlab-website.manuel-garber.workers.dev.example/"), false);
   assert.equal(isAllowedSource(null, "https://garberlab.umassmed.edu.evil.example/"), false);
   assert.equal(isAllowedSource(null, null), false);
   assert.equal(isAllowedSource("null", "not a url"), false);

@@ -35,9 +35,11 @@ function enabled(): boolean {
 }
 
 function endpoint(): string {
-  // Local testing with `wrangler dev` posts to the Worker serving the page.
-  const local = location.hostname === "localhost" || location.hostname === "127.0.0.1";
-  return local ? "/_t" : trackEndpoint;
+  // On localhost (`wrangler dev`) and on workers.dev branch previews, post to the Worker
+  // serving the page, so a preview build is tested against its own code.
+  const host = location.hostname;
+  const sameOrigin = host === "localhost" || host === "127.0.0.1" || host.endsWith(".workers.dev");
+  return sameOrigin ? "/_t" : trackEndpoint;
 }
 
 function sessionId(): string {

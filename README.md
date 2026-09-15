@@ -58,6 +58,19 @@ npx wrangler secret put ADMIN_USER
 npx wrangler secret put ADMIN_PASSWORD         # prompts, never type it inline
 ```
 
+Testing on a branch before merging: enable non-production branch builds in
+the Cloudflare dashboard (Worker > Settings > Build > Branch control). Each
+push to another branch then gets a preview URL of the form
+`<version>-garberlab-website.manuel-garber.workers.dev`, and the public site
+keeps serving `main`. Previews use the same D1 database and admin secrets as
+production, and the `host` column records where each session came from, so
+preview test data can be removed before merging:
+
+```bash
+npx wrangler d1 execute garberlab-analytics --remote \
+  --command "DELETE FROM events WHERE sid IN (SELECT sid FROM sessions WHERE host LIKE '%-garberlab-website.%'); DELETE FROM sessions WHERE host LIKE '%-garberlab-website.%'"
+```
+
 Local preview of the Worker and dashboard:
 
 ```bash

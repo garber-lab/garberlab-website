@@ -90,12 +90,17 @@ function hostOf(value: string | null): string | null {
 export function isAllowedSource(origin: string | null, referer: string | null): boolean {
   const host = hostOf(origin) ?? hostOf(referer);
   if (!host) return false;
-  return host === PUBLIC_HOST || host === WORKER_HOST || host === "localhost" || host === "127.0.0.1";
+  return isSiteHost(host) || host === "localhost" || host === "127.0.0.1";
+}
+
+/** The public host, the workers.dev host, or a branch preview such as "abc123-garberlab-website.manuel-garber.workers.dev". */
+export function isSiteHost(host: string): boolean {
+  return host === PUBLIC_HOST || host === WORKER_HOST || host.endsWith(`-${WORKER_HOST}`);
 }
 
 export function referrerHost(referrer: string | null): string | null {
   const host = hostOf(referrer);
-  if (!host || host === PUBLIC_HOST || host === WORKER_HOST) return null;
+  if (!host || isSiteHost(host)) return null;
   return host.replace(/^www\./, "");
 }
 
