@@ -165,6 +165,17 @@ export const peopleGroups: PeopleGroup[] = [
         image: "/people/khashi_afshari.jpg",
       },
       {
+        name: "Artür Manukyan",
+        dates: "August 2020 - Sept 2022",
+        role: "Postdoctoral Fellow",
+        focus:
+          "Development of bioinformatics analysis platforms and studying how skin diseases such as vitiligo and Stevens-Johnson syndrome arise at the molecular level using single-cell multi-omics integration",
+        currentRole: "Bioinformatics Scientist",
+        institution: "Max Delbrück Center for Molecular Medicine",
+        workingOn: "Multi-omics integration and software development for single-cell and spatial omics",
+        image: "/people/artur_manukyan.jpg",
+      },
+      {
         name: "Elisa Donnard",
         dates: "2014-2020",
         role: "Postdoctoral Fellow",
