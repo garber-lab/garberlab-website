@@ -155,6 +155,16 @@ export const peopleGroups: PeopleGroup[] = [
     current: [],
     alumni: [
       {
+        name: "Khashayar Afshari",
+        dates: "May 2020 - June 2025",
+        role: "Joint Postdoctoral Fellow with Mehdi Rashighi",
+        focus: "Immunology of autoimmune and inflammatory skin diseases, with a focus on disease mechanisms and the interplay between innate and adaptive immunity, particularly the role of myeloid cells. Studied the molecular mechanisms of photosensitivity in dermatomyositis and cutaneous lupus erythematosus (CLE), through integrated multi-omics analyses encompassing single-cell RNA sequencing (scRNA-seq), proteomics, and spatial transcriptomics, using mechanistic clinical trials as well as in vitro and ex vivo mechanistic studies in human cells and tissue.",
+        currentRole: "Scientist",
+        institution: "Dr. Phillip Frost Department of Dermatology and Cutaneous Surgery, University of Miami Miller School of Medicine",
+        workingOn: "Developing and applying multi-omic approaches to advance precision medicine in translational dermatology.",
+        image: "/people/khashi_afshari.jpg",
+      },
+      {
         name: "Elisa Donnard",
         dates: "2014-2020",
         role: "Postdoctoral Fellow",
